@@ -1,0 +1,29 @@
+name: Install Godot
+inputs:
+  archive:
+    description: Whether to archive the Godot binary & export templates
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Godot
+      shell: bash
+      # This script hard-codes the Godot version to 4.3-stable Linux 64-bit
+      # We could modify it to accept version params, but it's probably not necessary.
+      run: ${{ github.action_path }}/install-godot.sh
+
+      # No archive - Godot will be used on this runner. Move the export templates into the appropriate directory.
+    - name: Move export templates
+      if: ${{ inputs.archive != 'true' }}
+      uses: ./.github/actions/move-godot-export-templates
+
+      # Archiving - another job will run the build - so we just save the export templates and Godot together as an artifact.
+    - name: Archive Godot & export templates
+      if: ${{ inputs.archive == 'true' }}
+      uses: actions/upload-artifact@v4
+      with:
+        path: .
+        name: godot-install
+        retention-days: 1
