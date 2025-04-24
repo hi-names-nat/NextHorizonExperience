@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://r12qrkxrr37"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dypyojjonobw5"]
 
-[ext_resource type="Resource" uid="uid://b5esm2gq1ax2y" path="res://world/denizens/Dialogue/SL_Gun.tres" id="1_uqk8g"]
+[ext_resource type="Resource" uid="uid://cbifkw8ryc03b" path="res://world/denizens/Dialogue/SL_Gun.tres" id="1_uqk8g"]
 [ext_resource type="Script" path="res://script/interactables/g_billboard_passages.gd" id="2_v73kh"]
 
 [resource]

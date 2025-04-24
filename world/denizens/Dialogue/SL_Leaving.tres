@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://buitfbwskodbe"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://k4rh871t0kee"]
 
-[ext_resource type="Resource" uid="uid://bsjxcb812n0xi" path="res://world/denizens/Dialogue/SL_MoveIn.tres" id="1_qhg3a"]
+[ext_resource type="Resource" uid="uid://cfaba8uxtmhh" path="res://world/denizens/Dialogue/SL_MoveIn.tres" id="1_qhg3a"]
 [ext_resource type="Script" path="res://script/interactables/g_billboard_passages.gd" id="2_eh0q6"]
 
 [resource]

@@ -14,3 +14,7 @@ export_credentials.cfg
 data_*/
 
 build/
+
+*.exr
+*.exr.import
+*.key

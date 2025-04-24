@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://1g67kx2p77fd"
+path="res://.godot/imported/testboyo.dialogue-6649e930f8c0139b1e78fda7276b8661.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/testboyo.dialogue"
+dest_files=["res://.godot/imported/testboyo.dialogue-6649e930f8c0139b1e78fda7276b8661.tres"]
+
+[params]
+
+defaults=true

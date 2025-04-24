@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbd8f8ail12dy"]
+[gd_scene load_steps=9 format=3 uid="uid://dbd8f8ail12dy"]
 
 [ext_resource type="Script" path="res://script/player/g_player.gd" id="1_0mupo"]
 [ext_resource type="Texture2D" uid="uid://npbaotfvgrg" path="res://view_border.png" id="2_rc5qc"]
-[ext_resource type="Theme" uid="uid://cuhanp5prmi30" path="res://engine/fb_theme.tres" id="3_hican"]
-[ext_resource type="FontFile" uid="uid://bciu6qm4pk32y" path="res://UI/ChevyRay - Express.ttf" id="4_rub46"]
 [ext_resource type="PackedScene" uid="uid://x3c2ryryppc" path="res://script/player/chat.tscn" id="5_b34l4"]
 [ext_resource type="Theme" uid="uid://cp2lvhk230w7h" path="res://engine/EggUI_Theme.tres" id="7_it024"]
 [ext_resource type="Texture2D" uid="uid://ctmcru4i2506i" path="res://world/objects/artistEgg.png" id="8_eoubn"]
@@ -12,10 +10,13 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbfyn"]
 height = 1.7
 
-[sub_resource type="LabelSettings" id="LabelSettings_j76d5"]
-font_size = 9
-outline_size = 1
-outline_color = Color(0.0627451, 0, 0, 1)
+[sub_resource type="GDScript" id="GDScript_j6san"]
+script/source = "extends SubViewport
+
+func _ready() -> void:
+	await get_parent().ready
+	#world_3d = get_tree().root.world_3d
+"
 
 [node name="GPlayer" type="CharacterBody3D"]
 floor_snap_length = 0.2
@@ -24,14 +25,12 @@ script = ExtResource("1_0mupo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_pbfyn")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CamPos" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-cull_mask = 1048573
-current = true
-fov = 90.0
-far = 10.0
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+[node name="InteractCast" type="RayCast3D" parent="CamPos"]
+unique_name_in_owner = true
 target_position = Vector3(0, 0, -2)
 collision_mask = 4
 collide_with_areas = true
@@ -40,9 +39,6 @@ collide_with_areas = true
 
 [node name="Camera_standpos" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-visible = false
 
 [node name="StairsAhead" type="RayCast3D" parent="."]
 unique_name_in_owner = true
@@ -54,11 +50,35 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00221, 0)
 target_position = Vector3(0, -0.75, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 layer = -1
 follow_viewport_enabled = true
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+[node name="MainViewport" type="SubViewportContainer" parent="PlayerUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="PlayerUI/MainViewport"]
+handle_input_locally = false
+size = Vector2i(320, 224)
+render_target_update_mode = 4
+script = SubResource("GDScript_j6san")
+
+[node name="MainCam" type="Camera3D" parent="PlayerUI/MainViewport/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+cull_mask = 1048573
+current = true
+fov = 90.0
+far = 10.0
+
+[node name="TextViewport" type="SubViewportContainer" parent="PlayerUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -66,20 +86,20 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="PlayerUI/TextViewport"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(320, 224)
+size = Vector2i(1280, 896)
 render_target_update_mode = 4
 
-[node name="TextCam" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+[node name="TextCam" type="Camera3D" parent="PlayerUI/TextViewport/SubViewport"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 cull_mask = 2
 fov = 90.0
 far = 15.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="PlayerUI"]
 visible = false
 offset_left = -199.0
 offset_top = -132.0
@@ -88,45 +108,15 @@ offset_bottom = 579.0
 texture = ExtResource("2_rc5qc")
 expand_mode = 2
 
-[node name="DialogueOptions" type="Label" parent="CanvasLayer"]
-unique_name_in_owner = true
-visible = false
-offset_left = 1.0
-offset_top = 125.0
-offset_right = 550.0
-offset_bottom = 222.0
-theme = ExtResource("3_hican")
-theme_override_fonts/font = ExtResource("4_rub46")
-text = "1: Say Thing
-2: Say Thing
-3: say thing
-4: say thing
-5: say thing"
-label_settings = SubResource("LabelSettings_j76d5")
-
-[node name="ExplainPrompt" type="Label" parent="CanvasLayer"]
-unique_name_in_owner = true
-visible = false
-offset_left = 1.0
-offset_top = 109.0
-offset_right = 550.0
-offset_bottom = 125.0
-theme = ExtResource("3_hican")
-theme_override_fonts/font = ExtResource("4_rub46")
-theme_override_font_sizes/font_size = 11
-text = "(Select by using number keys)"
-label_settings = SubResource("LabelSettings_j76d5")
-vertical_alignment = 3
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PlayerUI"]
 offset_right = 40.0
 offset_bottom = 40.0
 stretch_mode = 3
 
-[node name="Chat" parent="CanvasLayer" instance=ExtResource("5_b34l4")]
+[node name="Chat" parent="PlayerUI" instance=ExtResource("5_b34l4")]
 unique_name_in_owner = true
 
-[node name="EggGet" type="Control" parent="CanvasLayer"]
+[node name="EggGet" type="Control" parent="PlayerUI"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -138,7 +128,7 @@ grow_vertical = 2
 theme = ExtResource("7_it024")
 script = ExtResource("8_vx5sw")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EggGet"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/EggGet"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,10 +136,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/EggGet/MarginContainer"]
+[node name="Panel" type="Panel" parent="PlayerUI/EggGet/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EggGet/MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/EggGet/MarginContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -157,26 +147,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="EggName" type="Label" parent="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="EggName" type="Label" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "YOU GOT [EGG]!"
 horizontal_alignment = 1
 
-[node name="EggDesc" type="Label" parent="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="EggDesc" type="Label" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Jokey description of the egg"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 120)
 layout_mode = 2
 
-[node name="EggTex" type="TextureRect" parent="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="EggTex" type="TextureRect" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 50)
 layout_mode = 2
@@ -184,7 +174,7 @@ texture = ExtResource("8_eoubn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Okay" type="Button" parent="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Okay" type="Button" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -193,6 +183,6 @@ text = "Nice :)"
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.689964, 0.626744, 0.559216, 1)
 
-[connection signal="all_eggs" from="CanvasLayer/EggGet" to="." method="all_eggs"]
-[connection signal="egg_accepted" from="CanvasLayer/EggGet" to="." method="confirm_egg"]
-[connection signal="pressed" from="CanvasLayer/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer/Okay" to="CanvasLayer/EggGet" method="_on_okay_pressed"]
+[connection signal="all_eggs" from="PlayerUI/EggGet" to="." method="all_eggs"]
+[connection signal="egg_accepted" from="PlayerUI/EggGet" to="." method="confirm_egg"]
+[connection signal="pressed" from="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer/Okay" to="PlayerUI/EggGet" method="_on_okay_pressed"]

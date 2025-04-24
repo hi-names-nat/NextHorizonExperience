@@ -1,0 +1,35 @@
+~ initial
+BoxBoy: [center]Ohohoho! Looks like it's some sort of clown! BTW: {{Globals.funny}}[/center]
+BoxBoy: [center]You certainly seem to have found yourself in an odd place, huh?[/center]
+BoxBoy: [center]What you gonna do? Gonna cry? gonna piss your pants, maybe?[/center]
+BoxBoy: [center]...[/center]
+BoxBoy: [center]Look bud.[/center]
+BoxBoy: [center]I don't wanna see you sad, so let's just go back to where we came from, yeah?[/center]
+~ responses_0
+- Okay
+	=> response_okay
+- No thanks
+	=> response_no
+- Ugh, stop talking
+	=> response_shutup
+- Help
+	=> response_help
+- Bye
+	=> response_bye
+
+~ response_okay
+BoxBoy: Alright bud. See ya later, okay?
+=> END!
+~ response_no
+BoxBoy: Okay, fine. Cool. Just fuckin stick around then. 
+BoxBoy: Plenty of shit to do. I guess. Man, fuck you.
+=> END!
+~ response_shutup
+BoxBoy: fucking. [wait=1]rude.[wait=1] I'm JUST tryna help here.
+=> responses_0
+~ response_help
+BoxBoy: "Help"? Bud, the fuck you think I'm doin? Listen. I get that you're scared, but take the good things as they come, alright?
+=> responses_0
+~ response_bye
+BoxBoy: Alright bud. If you wanna stick around that's your perogative.
+=> END!

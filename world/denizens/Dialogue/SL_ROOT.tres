@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://88mjcjhh7ael"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://ciu28ddsmjcek"]
 
-[ext_resource type="Resource" uid="uid://buitfbwskodbe" path="res://world/denizens/Dialogue/SL_Leaving.tres" id="1_fpjli"]
+[ext_resource type="Resource" uid="uid://k4rh871t0kee" path="res://world/denizens/Dialogue/SL_Leaving.tres" id="1_fpjli"]
 [ext_resource type="Script" path="res://script/interactables/g_billboard_passages.gd" id="2_7ignm"]
-[ext_resource type="Resource" uid="uid://r12qrkxrr37" path="res://world/denizens/Dialogue/SL_Tech.tres" id="2_7wvbe"]
-[ext_resource type="Resource" uid="uid://c1uf2ufqj58it" path="res://world/denizens/Dialogue/SL_Bye.tres" id="3_xksj8"]
+[ext_resource type="Resource" uid="uid://dypyojjonobw5" path="res://world/denizens/Dialogue/SL_Tech.tres" id="2_7wvbe"]
+[ext_resource type="Resource" uid="uid://d4apui0lqn7ry" path="res://world/denizens/Dialogue/SL_Bye.tres" id="3_xksj8"]
 
 [resource]
 script = ExtResource("2_7ignm")

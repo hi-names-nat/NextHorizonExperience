@@ -4,10 +4,9 @@
 [ext_resource type="Script" path="res://script/player/player_start.gd" id="1_oqf4k"]
 [ext_resource type="Material" uid="uid://7cph5a3t35rn" path="res://script/player/engine_wireframe.tres" id="2_0ljs7"]
 [ext_resource type="PackedScene" uid="uid://dbd8f8ail12dy" path="res://script/player/g_player.tscn" id="2_i4jj0"]
+[ext_resource type="ArrayMesh" uid="uid://cagibi4h7iyos" path="res://engine/mesh_internal/player_start.obj" id="5_gjs3i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ipfky"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f2d45"]
 
 [node name="PlayerStart" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -28,9 +27,10 @@ texture = ExtResource("1_cud1s")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="editor_only/StaticBody3D"]
 shape = SubResource("CapsuleShape3D_ipfky")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="editor_only"]
+[node name="Mesh" type="MeshInstance3D" parent="editor_only"]
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, -0.465673, 0)
 material_override = ExtResource("2_0ljs7")
-mesh = SubResource("CapsuleMesh_f2d45")
+mesh = ExtResource("5_gjs3i")
 
 [node name="Label3D" type="Label3D" parent="editor_only"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43223, 0)

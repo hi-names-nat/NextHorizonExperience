@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfaf6f4foopdy"]
+
+[ext_resource type="Script" path="res://world/denizens/ndl/balloon.gd" id="1_qsm75"]
+[ext_resource type="Script" path="res://script/player/dialogue_nodule.gd" id="2_r0352"]
+[ext_resource type="Theme" uid="uid://cuhanp5prmi30" path="res://engine/fb_theme.tres" id="3_1y825"]
+[ext_resource type="FontFile" uid="uid://bciu6qm4pk32y" path="res://UI/ChevyRay - Express.ttf" id="4_fghpb"]
+[ext_resource type="Theme" uid="uid://wwyhsbai5df7" path="res://engine/dialogue_theme.tres" id="5_5b0dq"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="6_33gc2"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="6_mdy40"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8vsq1"]
+font = ExtResource("4_fghpb")
+font_size = 36
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j76d5"]
+font_size = 36
+outline_size = 1
+outline_color = Color(0.0627451, 0, 0, 1)
+
+[node name="DialogueUI" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_qsm75")
+
+[node name="Balloon" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_r0352")
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -636.0
+offset_top = 52.0
+offset_right = 1560.0
+offset_bottom = 440.0
+mouse_filter = 1
+theme = ExtResource("3_1y825")
+text = "CHNAME"
+
+[node name="WorldDialogueLine" type="Control" parent="Balloon"]
+unique_name_in_owner = true
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Balloon/WorldDialogueLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("5_5b0dq")
+bbcode_enabled = true
+text = "DM2 DIALOGUE
+"
+visible_characters_behavior = 1
+script = ExtResource("6_33gc2")
+seconds_per_step = 0.05
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+
+[node name="ResponsesMenu" type="BoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 27.0
+offset_top = 486.0
+offset_right = 1261.0
+offset_bottom = 861.0
+vertical = true
+script = ExtResource("6_mdy40")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Label" parent="Balloon/ResponsesMenu"]
+layout_mode = 2
+mouse_filter = 1
+text = "1. Say Thing"
+label_settings = SubResource("LabelSettings_8vsq1")
+
+[node name="DialogueOptions" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 4.0
+offset_top = 500.0
+offset_right = 2200.0
+offset_bottom = 888.0
+mouse_filter = 1
+theme = ExtResource("3_1y825")
+theme_override_fonts/font = ExtResource("4_fghpb")
+text = "1: Say Thing
+2: Say Thing
+3: say thing
+4: say thing
+5: say thing"
+label_settings = SubResource("LabelSettings_j76d5")
+
+[node name="ExplainPrompt" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 4.0
+offset_top = 436.0
+offset_right = 2200.0
+offset_bottom = 500.0
+mouse_filter = 1
+theme = ExtResource("3_1y825")
+theme_override_fonts/font = ExtResource("4_fghpb")
+theme_override_font_sizes/font_size = 44
+text = "(Select by using number keys)"
+label_settings = SubResource("LabelSettings_j76d5")
+vertical_alignment = 3
+
+[connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

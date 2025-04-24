@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b5esm2gq1ax2y"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cbifkw8ryc03b"]
 
-[ext_resource type="Resource" uid="uid://dcmemmng785w7" path="res://world/denizens/Dialogue/Li_Translate.tres" id="1_bla3h"]
+[ext_resource type="Resource" uid="uid://bd544flgryxdt" path="res://world/denizens/Dialogue/Li_Translate.tres" id="1_bla3h"]
 [ext_resource type="Script" path="res://script/interactables/g_billboard_passages.gd" id="2_31cwh"]
 
 [resource]

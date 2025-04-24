@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bok6rs0gmvxd2"
+path="res://.godot/imported/ndl_test.dialogue-10d546b56b2c47a5ab36c1d2b37abf92.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/ndl_test.dialogue"
+dest_files=["res://.godot/imported/ndl_test.dialogue-10d546b56b2c47a5ab36c1d2b37abf92.tres"]
+
+[params]
+
+defaults=true

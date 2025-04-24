@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjvqt4ahwpa3g"]
+
+[ext_resource type="Texture2D" uid="uid://bacsdshd3bdu5" path="res://script/cloth01.png" id="1_00lo5"]
+[ext_resource type="PackedScene" uid="uid://c2us5cfpjvow5" path="res://script/player/player_start.tscn" id="1_7tt72"]
+[ext_resource type="Script" path="res://dialogue_object_nouveau.gd" id="3_n8yl1"]
+[ext_resource type="Resource" uid="uid://1g67kx2p77fd" path="res://world/denizens/ndl/testboyo.dialogue" id="4_7gjgu"]
+[ext_resource type="Script" path="res://script/interactables/g_use_component.gd" id="4_d4wsb"]
+[ext_resource type="Material" uid="uid://dpip4gdun5tc8" path="res://world/materials/outline.tres" id="6_kdrm7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfxig"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_00lo5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ui5a2"]
+size = Vector3(1.39258, 2.59704, 1.57251)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhm8f"]
+
+[node name="TestScene" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+use_collision = true
+size = Vector3(10, 0.5, 10)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -23.1273, 41.7733, 85.1916)
+use_collision = true
+size = Vector3(49.4707, 32.9595, 0.001)
+material = SubResource("StandardMaterial3D_pfxig")
+
+[node name="PlayerStart" parent="." instance=ExtResource("1_7tt72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223742, 1, 3.64299)
+create_on_ready = true
+
+[node name="TEST_BoxBoy" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00936151, 1.01554, 1.00317)
+script = ExtResource("3_n8yl1")
+RootPassages = ExtResource("4_7gjgu")
+
+[node name="UseTrigger" type="StaticBody3D" parent="TEST_BoxBoy" node_paths=PackedStringArray("Outlines")]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_d4wsb")
+Outlines = [NodePath("../boxboy_outline")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TEST_BoxBoy/UseTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648622, 0)
+shape = SubResource("BoxShape3D_ui5a2")
+
+[node name="boxboy_body" type="MeshInstance3D" parent="TEST_BoxBoy"]
+mesh = SubResource("BoxMesh_bhm8f")
+skeleton = NodePath("")
+
+[node name="boxboy_outline" type="MeshInstance3D" parent="TEST_BoxBoy"]
+visible = false
+mesh = SubResource("BoxMesh_bhm8f")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("6_kdrm7")
+
+[node name="TextDisplayPoint" type="Node3D" parent="TEST_BoxBoy"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

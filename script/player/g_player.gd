@@ -30,6 +30,10 @@ var mouse_input: Vector2
 
 var player_name: String
 
+@onready var main_cam = %MainCam
+
+#@onready var dialogue = %DialogueNodule
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var viewport_transform: Transform2D = get_tree().root.get_final_transform()
@@ -40,15 +44,16 @@ func _init() -> void:
 
 func _ready() -> void:
 	stand_height = ($CollisionShape3D.shape as CapsuleShape3D).height
-	#$Camera3D.rotation = Vector3(0,0,0)
-	$CanvasLayer.set_custom_viewport($Camera3D.get_viewport())
-	$CanvasLayer.follow_viewport_enabled = true
+	#%CamPos.rotation = Vector3(0,0,0)
+	%PlayerUI.set_custom_viewport(%CamPos.get_viewport())
+	%PlayerUI.follow_viewport_enabled = true
 	%Chat.on_chat_exit.connect(func(): input_disabled = false)
 	%Chat.on_chat_sent.connect(func(): input_disabled = false)
 
 func _process(delta: float) -> void:
 	mouse_input = Vector2.ZERO
-	%TextCam.global_transform = $Camera3D.global_transform
+	%TextCam.global_transform = %CamPos.global_transform
+	%MainCam.global_transform = %CamPos.global_transform
 	if Input.is_action_just_pressed("player_exit"):
 		input_override = !input_override
 
@@ -97,7 +102,7 @@ func _physics_process(delta: float) -> void:
 
 func set_camera_rotation(val: Vector3):
 	print(val)
-	$Camera3D.rotation = val * basis
+	%CamPos.rotation = val * basis
 
 func _calculate_look(delta: float) -> void:
 	var mouseInversions: Vector2 = Vector2(-1 if invert_mouse_x else 1, -1 if invert_mouse_y else 1)
@@ -105,12 +110,12 @@ func _calculate_look(delta: float) -> void:
 	var CameraInput: Vector2 = (mouse_input * .001) * mouse_sensitivity * mouseInversions
 	
 	#rotate viewpoint/player body
-	if $Camera3D.rotation_degrees.x + CameraInput.y >= 90:
-		$Camera3D.rotation_degrees.x = 90	
-	elif $Camera3D.rotation_degrees.x + CameraInput.y <= -90:
-		$Camera3D.rotation_degrees.x = -90	
+	if %CamPos.rotation_degrees.x + CameraInput.y >= 90:
+		%CamPos.rotation_degrees.x = 90	
+	elif %CamPos.rotation_degrees.x + CameraInput.y <= -90:
+		%CamPos.rotation_degrees.x = -90	
 	else:
-		$Camera3D.rotate_object_local(Vector3(1,0,0), CameraInput.y)
+		%CamPos.rotate_object_local(Vector3(1,0,0), CameraInput.y)
 	rotate(Vector3(0, 1, 0), CameraInput.x)
 	
 func _calculate_movement(delta: float) -> void:
@@ -140,8 +145,8 @@ func _calculate_movement(delta: float) -> void:
 		_snap_down_to_stairs_check()
 
 func _notify_player_look() -> void:
-	if $Camera3D/RayCast3D.is_colliding():
-		var obj = $Camera3D/RayCast3D.get_collider()
+	if %InteractCast.is_colliding():
+		var obj = %InteractCast.get_collider()
 		#prevents queue_free from deleting obj between this and the next frame without the correct clearing.
 		if obj == null: 
 			print('null')
@@ -153,20 +158,20 @@ func _notify_player_look() -> void:
 		interactable_looked_at = null
 
 func _notify_interact(mod_value: int = 0) -> void:
-	if $Camera3D/RayCast3D.is_colliding():
+	if %InteractCast.is_colliding():
 		
-		print("colliding with ", $Camera3D/RayCast3D.get_collider().name)
-		var obj = $Camera3D/RayCast3D.get_collider()
+		print("colliding with ", %InteractCast.get_collider().name)
+		var obj = %InteractCast.get_collider()
 		obj.use_object(mod_value)
 
 #todo: crouch
 func _crouch() -> void:
-	$Camera3D.position = $Camera_crouchpos.position
+	%CamPos.position = $Camera_crouchpos.position
 	($CollisionShape3D.shape as CapsuleShape3D).height = CROUCH_HEIGHT
 	is_crouching = true
 
 func _stand() -> void:
-	$Camera3D.position = $Camera_standpos.position
+	%CamPos.position = $Camera_standpos.position
 	($CollisionShape3D.shape as CapsuleShape3D).height = stand_height
 	is_crouching = false
 
@@ -176,15 +181,15 @@ func _crouch_toggle() -> void:
 	else:
 		_crouch()
 
-func set_player_input_prompt(str):
-	%DialogueOptions.text = str
-	%DialogueOptions.visible = true
-	%ExplainPrompt.visible = true
-
-func clear_player_input_prompt():
-	%DialogueOptions.text = ""
-	%DialogueOptions.visible = false
-	%ExplainPrompt.visible = false
+#func set_player_input_prompt(str):
+	#%DialogueOptions.text = str
+	#%DialogueOptions.visible = true
+	#%ExplainPrompt.visible = true
+#
+#func clear_player_input_prompt():
+	#%DialogueOptions.text = ""
+	#%DialogueOptions.visible = false
+	#%ExplainPrompt.visible = false
 
 #Stairs logic, stolen basically wholesale from https://youtu.be/Tb-R3l0SQdc?si=0cWy6AenjvXxH0K8. remember to credit.
 
