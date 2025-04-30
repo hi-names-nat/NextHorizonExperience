@@ -1,0 +1,70 @@
+~ ROOT
+- > Talk
+	(Your gaze is drawn to the luster of a large, disorganized pile of knives, blades, and other sharp objects.)
+	(All open, but meticulously polished and cared for.)
+	(As you approach, a growling and scrabbling sound is heard, a small sand-colored dragon effortlessly climbing over the back of it.)
+	(They spread their feathered wings and curl their striped tail around their hoard, growling.)
+	 Who approaches??
+- > Name
+	(The dragon perks an ear, standing up on their hind legs and bowing in a wobbly manner.)
+	Misericorde Voidscar, keeper of the sharp and the shine,
+	custodian of The Splitting, 
+	herald of The Twixt and Twain, 
+	guardian of the Veinsplash Kukuri. 
+	(They grin, a blunted fang showing.) 
+	… and Bisectual.
+	~ selections
+	- > Long Name
+		(The dragon sighs loudly, ears folded to the side.)
+		Dragons have pride in their names. Ggrrrr… it’s so hard to get creatures to say the full thing… 
+		(they scuff a paw against their pile, grumbling.) 
+		… Call me Seri.
+		=> selections
+	- > Bisectual
+		Sorry, I'm taken.
+		=> selections
+	- > Doesn't that hurt?
+		(The dragon rises up proudly.) 
+		Name of Voidscar. Void of scars. No blade can scratch my scales.
+	- > Blunt claws
+		(The dragon snorts, choosing a particularly cheap folding knife from the top of the pile,) 
+		(flipping it open and sharpening it against their claws.) 
+		If you can’t grow your own, store-bought is fine.
+		=> selections
+	- > Blades
+		(The dragon perks up its ears.)
+		Ask about which?
+		- > The Splitting
+			(Their ears perk up, jumping into the air and diving into their sharp hoard)
+			 (springing back up with a malevolent-looking cleaver in their muzzle.)
+			Legendary legendary!
+			Said to have divided a realm in two, definitely has divided a sandwich or two in two.
+			(They lick their muzzle, lost in tasty thoughts for a moment.)
+		- > Twixt and Twain
+			(They tilt their head to the side, ear flopping over their green shirt, before scooping a pair of glowing blue daggers off of the side of the pile.)
+			Twixt! Creates the Space Between Space!
+			Twain! To destroy the connections to all!
+			These two can make four into eight!
+			(They happily tap their paws together, the blades clanging against each other with an unholy, echo-y sound.)
+		- > Veinsplash Kukuri
+			(The dragon looks nervous for a second, looking back over their tail at something unseen behind the pile.)
+			N-not showing that one yet. Still stained.
+			(They rub their paw behind their head sheepishly.)
+		- > Mana Sword
+			At the mention of this blade, their ears fold back, a feral snarl escaping them.
+			‘Not worthy’ says she! ‘Ruin to all’ says she!!
+			The short bladeless magicmaker!
+			Doesn’t even use the thing! How can I, Misericorde Voidscar be not worthy of ANY blade!?
+			(They growl for a moment to themselves, then sigh.)
+			Will have eventually.
+			Get her drunk enough to have me sharpen it… then mine it shall be.
+		- > Bye
+			=> bye
+- > Bye
+	=> bye
+
+~ bye
+(The dragon emits a musical-sounding chirr, waving a paw at you.)
+May the path you walk split the land you walk upon.
+(They turn to scramble back down their stack, but then turn around to offer a bit of excited advice) 
+If you’re heading to the tavern, check the floor! Creatures always losing pocketknives!

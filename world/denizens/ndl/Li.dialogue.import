@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bbx8242ney7ca"
+path="res://.godot/imported/Li.dialogue-dd5cf3a25d10843854d76eb7e60479fc.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/Li.dialogue"
+dest_files=["res://.godot/imported/Li.dialogue-dd5cf3a25d10843854d76eb7e60479fc.tres"]
+
+[params]
+
+defaults=true

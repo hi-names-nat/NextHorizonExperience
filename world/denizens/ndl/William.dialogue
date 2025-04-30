@@ -1,0 +1,145 @@
+~ ROOT
+Oh hey hey! It's a newbie!
+I'm sure Didi's already welcomed you, but let me be the SECOND to welcome you to frostbreak!
+Cmere. Take a load off. sit down. hang out for a bit. lets chat. I wanna know about you!
+- Tell him about yourself [if Globals.states_dict["ufq"] < 1]
+	=> tell_about_self
+- Tell them about yourself [if Globals.states_dict["ufq"] >= 1]
+	~ tell_about_self
+	if Globals.states_dict["ufq"] < 1
+		(He listens intently as you finish.)
+		(You can tell he's just a bit tipsy, he's quite keen on you)
+	else
+		(They listen intently as you finish.)
+		(You can tell they're just a bit tipsy, they're quite keen on you)
+	Interesting! Interesting! 
+	Well I'm sure you know, but you're our first chain in a really long time!
+	It's good to finally have folks here again. Thanks for showin' up!!!
+	Wanna ask me anything?
+	~ responses_root
+	- Tell me about this place
+		Frostbreak is a wonderful place, huh?
+		Right now you're in the haven, the main living space for most of us denizens and the main place to visit for visitors like yourself.
+		Other than the haven, there's the mountains to the north and the drifts to the south.
+		You passed through the drifts on your way here, I'm sure.
+		That's where visitors come through. It's damn cold down there, eh? We try our best to light and maintain the way, but it's always snowing down there.
+		I mean always.
+		ALWAYS.
+		Don't worry though. If you pass out there, or are freezing. One of the guardians will come for ya.
+		Usually the fox, but I've seen the Dragon help someone a time or two.
+		Truly a sight, to see the Dragon saving someone.
+		Speaking of! The dragon lives up on the mountains.
+		If you ever have a large request, something that we otherwise couldn't do, even with feathers. Speak to the Dragon.
+		It can grant your request. 
+		However the climb is arduous. Speak to trailhead before you go. They can prepare you for that.
+		~ responses_this_place
+		- The Climb?
+			The climb is hard.
+			I've done it. Most of the denizens have.
+			Trailhead does their best to maintain the path up, but frostbreak itself seems to want the climb to be difficult.
+			Pits. falls. difficult terrain. climbing at 45, heck, 90 degrees.
+			there's a few jumps, if the bridges are out, which they are often.
+			It's something alright.
+			Though, it's also fun. You get good at it, eventually. If you meet the dragon a lot.
+			I spend a lot of time with it. 
+			Speaking with the dragon is one of the finest pleasures in life. Heck, finer than the haven brew. 
+			It is. a kind creature. It just...
+			don't tell it i said this. but... it's really anxious about newbies. which is probably why it hasn't flown over since your visit...
+			you should introduce yourself, sometime.
+			=> responses_this_place
+		- Trailhead?
+			Trailhead are the folks that help with managing frostbreak as well as preparing folks for the big climb.
+			They give you tools. a meal. Whatever provisions you might need, and a guide.
+			They're interested in the well being of all who come here and call this place home. You probably know a few members of trailhead already.
+			They're kind. They try to keep frostbreak as nice as possible for all of us. Though, they can only do so much.
+			You can join the group, if you'd like. Though that takes being known in the community beforehand.
+			That first one who visited from your chain, Hex. She's a member of trailhead. You could talk to her about it. maybe.
+			=> responses_this_place
+		- I don't remember the drifts...
+			...Interesting.
+			The way you're using the chain is unique from what i can see. Somewhat of a proxy.
+			That might be why. The venture was just, skipped from your perspective, though a part of you DID make that journey.
+			Perhaps, in a different form?
+			I dunno. Just thinking.
+			Pretty strange though. Maybe you'll be able to see it, eventually.
+			=> responses_this_place
+		- [lb]RETURN[rb]
+			=> responses_root
+	- Tell me about you
+		Me? What makes me so interesting?
+		Haha. Alright. okay. Life story.
+		Uhh hm.
+		I'm not from here originally.
+		There are some that are, but I'm not.
+		I came here after a really bad breakup.
+		Life ruining sorta stuff.
+		Just, miserable.
+		But I came here and things kind of. Clicked.
+		No new form, not like the others.
+		I'm a bit jealous of them. To be honest.
+		But. I was here.
+		Met folks. It was. Nice. I felt at peace for the first time in a long time.
+		Felt safe. I decided that this place was mine. So I decided to move in permanently. 
+		Spoke with The Dragon, whole nine yards.
+		Yeah...
+		So, uh. Guess that's it? 
+		Sorry, I'm sure there's more interesting folks around.
+		=> responses_root
+	- Tell me about beer
+		The haven brew?
+		Yeah, so I'm not sure if DiDi told you, if she didn't ask for the specifics.
+		But it's great. Tastes like exactly what you want it to. Doesn't taste like anything you wouldn't want it to.
+		To me? Tastes like a lighter wheatbeer with notes of berry and citrus.
+		To some of my friends? Tastes like the darkest porter you could get your digits on.
+		To others? Tastes like candy.
+		It's super cool. It's kind of a game, to see what folks taste in the brew.
+		...
+		In fact, here.
+		if Globals.states_dict["ufq"] < 1
+			(he hands you the stein. You take a sip)
+		else
+			(they hand you the stein. You take a sip)
+		(...Huh... Tastes...)
+		- ...Like blueberry pie!
+			Interesting, a sweet-and-sour thing, huh?
+			=> will_notes
+		- ...Roasty, dark, and sweet!
+			Interesting, like to drink like a dwarf, huh?
+			Or, I suppose, drink like a dragon.
+			=> will_notes
+		- ...Light and fluffy, like candy!
+			Got a sweet tooth?
+			=> will_notes
+		- ...Strong-bodied and full!
+			Tastes like a nice cuppa to ya?
+			=> will_notes
+		- ...Kind of like soda!
+			Soda! I don't think I've heard that one before!
+			=> will_notes
+	- [lb]QUEST[rb] Check out this coin [if Globals.states_dict["ufq"] == 0]
+		Oh hey!
+		That's a wishing coin. A piece of magical equipment from another place.
+		I visited there a while ago. I regret not grabbing one then
+		And now I can't, as the chain's closed.
+		Really cool! I'm not sure you can use that. But it's really neat!
+		- Take it!
+			Y-you're gonna give it to me?
+			Wow! That's really kind!
+			Hey, um. I don't have much to give in return except this
+			set Globals.set_state("ufq", 1)
+			(You got the pronouns (He/Him)!)
+			Yeah. You can have that. I've been thinking about it for a while and I think it's outlived its usefulness.
+			If you don't want that, I'm sure there's someone around who'd be interested in it.
+			=> responses_root
+		- I'm gonna keep it.
+			I would too, I don't blame you!
+			Anyway, where were we?
+			=> responses_root
+	~ will_notes
+	The other thing about this is that your friends get to learn what your tastes are.
+	I'll keep that in mind.
+	if Globals.states_dict["ufq"] < 1
+		(He winks.)
+	else
+		(They wink.)
+	=> responses_root

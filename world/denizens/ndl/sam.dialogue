@@ -1,0 +1,181 @@
+~ ROOT
+Oh... Hey.
+I. Um. Didn't think. Anyone would find me here...
+You're one of the new ones, right...? I don't recognize you.
+So uh... What do you want?
+~ root_responses
+- Who are you?
+	Um.
+	I uh, I'm Sam. Some of my friends call me Samothy.
+	... Please don't call me that. Haha.
+	I live here, with my boyfriend.
+	Uhhh. I'm an eagle. I'm gay, (obviously and obviously)
+	I kind of don't really do anything around. 
+	I'll help out in the bakery or tavern sometimes.
+	Really I'm trying to start my own thing, which'll hopefully happen eventually.
+	So... Yeah. Um. Anything else?
+	- How'd you come here?
+		Um...
+		Okay, I guess I'll share. The guardians wouldn't really let someone who'd be mean in here, right?
+		...
+		So okay, like.
+		I wasn't always me, right
+		I didn't look like this, I was different.
+		But, well. I was uh.
+		Well I was in a dark place and uh. I sort of saw two options in front of me.
+		I mean, literally.
+		To stop existing, or to follow the light I'd suddenly seen.
+		And uh, I followed the light. 
+		And I came here.
+		And I was this. I was me.
+		It was. Shocking. I hadn't ever thought I could be something else than that.
+		And then, I was me. An eagle. 
+		Suddenly everything made sense. 
+		It. Was. A lot.
+		I stayed for a while, but eventually tried to leave.
+		Of course, leaving as a visitor also means leaving your form behind.
+		I. Couldn't. Do it.
+		I spoke to a few of the others. They told me about Trailhead. Trailhead told me about The Dragon, and the climb.
+		So. I did it.
+		The next day. I did it.
+		Been here ever since.
+		A bit later I met Garett. He's like me, Frostbreak let us have our true forms.
+		And well, we fell in love here.
+		And he's uh.
+		I. Love him...
+		A lot...
+		And Stuff...
+		~ come_here_responses
+		- Can I ask about before?
+			uh. I don't like thinking about that too much.
+			Um. I wasn't very happy at all. 
+			I mean, you can tell, from what I told you.
+			But now, I'm a lot happier. Though still.
+			Uh. Like this. I'm sorry about me, by the way.
+			I'm trying to be better.
+			But.
+			I guess I do regret that I never went back, to say goodbye.
+			I bet a lot of my old friends there think I'm dead.
+			And well, the me they knew, kind of is.
+			But. They deserve to know.
+			One day, I'll go back. And I'll tell them. And I'll show them this place.
+			And they'll be able to visit. at any time.
+			And.
+			(He Sighs)
+			Sorry. Tangent.
+			=> come_here_responses
+		- Can I ask aboug Garett?
+			Garett is sweet.
+			He's the reason I'm trying to do things, the reason I'm trying to be better, in general.
+			Uh. You probably won't be able to meet him any time soon. He's out visiting in his chain of origin.
+			He's like me, the form he had before living in Frostbreak was different to his ideal form.
+			But. Now we're both happy. And gay. And stuff.
+			Have I mentioned we're gay.
+			We're gay.
+			When he comes back, I'll introduce you...
+			He'd... Like you, I think.
+			=> come_here_responses
+		- I have my real form here, too!
+			Oh... Really?
+			I knew there was something.
+			Uh. I like it... You, I mean. Your form?
+			Sorry. Hahaha.
+			Point is, I'm glad you're here. Got to have the experience.
+			Realizing your form is suddenly... Yours.
+			It's amazing, isn't it?
+			Uh. Remember, it won't stay when you go back, at least when you're still a visitor.
+			You can do what I did, and climb the mountain to stay here, and keep your form.
+			But... Remember that you'll have to live here.
+			You can still go back, obviously, but you can't be out for more than, like, a few months.
+			It's kinda scary. That's part of why I don't leave much.
+			But, uh, yeah.
+			You can always become a denizen, if there's no reason to stay in your reality of origin.
+			And uh, I'll help if you need. Alright?
+			Even here, we gotta stick together, right?
+			We call it being 'Delta', since. well. We're trying to change away, right?
+			=> come_here_responses
+		- [lb]Return[rb]
+			=> root_responses
+- What's this place?
+		Oh. Uhm. This is uh. Frostbreak. I'm sure you know that.
+		Specifically, the haven. It's a sort of an, asylum for a lot of us.
+		And definitely for me and my boyfriend.
+		=> root_responses
+- Are you okay?
+	(He looks slightly shocked that you've asked. His eyes light up, just a little)
+	Yeah, yeah. I'm fine. I just...
+	I hate new chain day. So many new faces. So much happening.
+	And I feel guilty when I just go and hide... When everyone else is out and saying hello.
+	Would I rather be playing video games? 
+	Yeah, obviously... But.
+	It's okay. I'm only going to stick around for like, a bit longer.
+	And then? Lux.
+	- Lux?
+		OH MY GOD.
+		HAVE YOU NOT HEARD OF LUX?
+		HOLY SHIT.
+		OKAY. SO LIKE.
+		IMAGINE LIKE THE BEST GAME YOU'VE EVER PLAYED
+		NOW MAKE IT BETTER???
+		LIKE. OH MY GOD
+		SO LIKE. LIKE.
+		OKAY SO LIKE ITS LIKE
+		YOU LIKE, LIVE IN THIS TOWN
+		AND LIKE, FOLKS ARE DISAPPEARING
+		AND YOU GO AND THEY
+		THEY'RE LIKE, MAKING SOMETHING SO HARD ITS BLEEDING INTO THE FUCKING WORLD
+		AND YOU HAVE TO LIKE, SAVE THEM
+		AND LIKE???
+		THERE'S A CHARACTER WITH SPECIES DYSPHORIA THAT GETS THEIR FORM???
+		AND LIKE
+		SORRY
+		LIKE
+		THEFUCKING MAIN CHARACTER
+		DRIVES A FUCKING
+		ME CH 
+		THAT YOU CAN LIKE, MODIFIY????? 
+		LIKE 
+		IM SORRY?
+		HUH.
+		WHAT.
+		FUCK.
+		ITS SO COOL.
+		YOU NEED TO PLAY IT.
+		ADD IT TO YOUR FUCKING LIST
+		YOUR FUCKING
+		BACKLOGGD OR WAHTEVER
+		RIGHT NOW.
+		Uh, anyway. uh. what were we talking about? 
+		Yeah. uh. 
+		Sorry. about that.
+		- Please, continue
+			Ahahaha. Um.
+			Wait, you were actually listening?
+			Wow, nobody really listens to me except Garett, usually.
+			Uh. Thanks. Haha. But I don't wanna spoil any more for you.
+			You should really play it for yourself.
+			If you can't find it, maybe wait a bit.
+			Maybe it's still being worked on, wherever your home reality is.
+			=> root_responses
+	- Guilty?
+		Feeling guilty?
+		Well okay. So like. Nobody shames me or anything. 
+		Everyone's really nice about that.
+		But, I feel bad. Because. Well. Like.
+		You folks deserve it, to meet me when you first show up, just so. well. We know of each other, at least.
+		It's not like 'Oh, hey, who's that random eagle down the road' 
+		and then you start screaming for me, and i have to book it outta there...
+		This did, actually happen. By the way. Uh, Please don't do that.
+		=> root_responses
+- The new ones?
+	...Do you not know?
+	You are... weird.
+	So like. You know about the chains, right? I'm not explaining that.
+	So like, we haven't had many new chains for, a while.
+	Chains have actually been closing. It's been more isolating recently, for the last uh... Good while
+	But suddenly, more chains are appearing again. 
+	You're from one of the new ones. I can tell.
+	So you're. One of the new ones. From one of the new ones.
+	Yeah. Sorry. I'm not trying to be mean... Just...
+	I kinda still don't get it.
+	=> root_responses

@@ -1,0 +1,40 @@
+~ ROOT
+...
+if Globals.states_dict["doorman"] == -1
+	... What?
+elif Globals.states_dict["doorman"] == 0
+	...No, I don't want anything. Please go away.
+elif Globals.states_dict["doorman"] == 1
+	I said, please go away!
+elif Globals.states_dict["doorman"] == 2
+	...
+elif Globals.states_dict["doorman"] == 3
+	Please.
+	Please go away.
+elif Globals.states_dict["doorman"] == 4
+	...
+elif Globals.states_dict["doorman"] == 5
+	....
+elif Globals.states_dict["doorman"] == 6
+	No, nothing is going to happen. stop.
+elif Globals.states_dict["doorman"] == 7
+	No, no, and NO.
+elif Globals.states_dict["doorman"] == 8
+	Access is not granted to this facility.
+elif Globals.states_dict["doorman"] == 9
+	This door is locked. Sorry.
+elif Globals.states_dict["doorman"] == 10
+	What, have you seen this bit before or something?
+elif Globals.states_dict["doorman"] == 11
+	Do you get something when you get to the end?
+elif Globals.states_dict["doorman"] == 12
+	Well. Let me tell you buddy.
+elif Globals.states_dict["doorman"] == 13
+	do Globals.set_state("doorman", Globals.states_dict["doorman"] + 1) 
+	That's true here too. (Sigh). Thanks for nothin.
+	=> END!
+else
+	(You hear nothing in response.)
+	=> END!
+do Globals.set_state("doorman", Globals.states_dict["doorman"] + 1) 
+=> END! 

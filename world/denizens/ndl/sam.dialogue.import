@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b1saj62o23o7n"
+path="res://.godot/imported/sam.dialogue-a8de81c4b47a0a0911db1a618cfbcd92.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/sam.dialogue"
+dest_files=["res://.godot/imported/sam.dialogue-a8de81c4b47a0a0911db1a618cfbcd92.tres"]
+
+[params]
+
+defaults=true

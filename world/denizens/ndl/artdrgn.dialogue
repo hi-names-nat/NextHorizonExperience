@@ -1,0 +1,63 @@
+~ ROOT
+Hi hi hiii!!!  Hello newcomer, hello and welcome, hello!!!
+I'm Morganite, I'm a real gem (she winks).
+I'm in charge of Vanity Square here!!! Well, I by a technicality – I'm not on PAYROLL or anything, hehehe, but I'm the only one doing it.
+~ responses_root
+- Ask about her collection of art supplies scattered haphazardly in a pile
+	Heyyy, don't you dare judge me!  You never know when you're going to need something in the middle of a project!!
+	Sure sure sure, it's a bit of a proooblem, but…
+	I mean, they come in handy!  If I'm painting I wouldn't want to run out of paint!
+	If I decide I want to make a sculpture, I've got everything I need!!!
+	- Where do you even find all that?  You've got NAME BRAND Crayola shit from the 90s?
+		I'm a chain hopper baby!!!
+		I kind of admittedly and this is a little naughty, teeheehee.
+		I use Frostbreak as a hub to hop chains to other plains to gobble up all their art supplies.  
+		Dumpster diving, big box store blowouts, estate sales, schools after hours…
+		- So you're a klepto?
+			Uh uh uh!!!  I'm a dragon, dear.  That's like, toootally the same as calling me a slur!!!
+			=> responses_root
+- Vanity Square?
+	Yesh!  Vanity Square is our little corner of the world for working on our ARTS and CRAFTS.  And for displaying them!!!
+	See, I love PAINTING, but I also like resin art and woodworking too.  I use all three in combination to make cool portraits and sculptures and stuff.
+	But I'll try anything thrice!!! 
+	I'd love to dip my toes into soapmaking, candle making, jewelry, welding, electrical engineering…
+	Rumor is that they're working on setting up a hobby swap… 
+	So I won't even need to steal–BUY LEGALLY PURCHASE ACQUIRE WITH MONEY!!!--as much stuff.
+	~ responses_vs
+	- What was that last craft?
+		Huh???
+		(She tossed a warm soldering iron into the pile. You quickly smell burning plastic.)
+		=> responses_vs
+	- What's a hobby swap?
+		Oooh!!!  A hobby swap is a group of arts and crafters who share their personal supplies around with each other.
+		If you wanted to learn to make resin pour art, you could use my resin supplies!
+		I CAN USE SOMEONE ELSE'S CANDLE MAKING EQUIPMENT. ;DDD
+		Isn't it great!!!
+		=> responses_vs
+	- [lb]RETURN[rb]
+		=> responses_root
+- Did you paint that canvas?
+	My canvassses are scattered all over vanity square actually.  I dabble in abstract, but I prefer to paint landscapes.
+	- Can I paint a canvas?
+		Oh yes yes yes!!!
+		Just walk up to this one beside me.  It's said that if you use your interact key, it will allow you to paint…
+		Last time I tried to “interact key" with a canvas, I “keyed" a big ol’ rip in it. LOL!
+		=> END!
+- I thought dinosaurs had feathers.
+	Rude rude RUDE!  I AM A DRAGON. MIGHTY AND DIGNIFIED AND MAGNIFICENT. RAWR.
+	- All of the dragons here look so different.
+		Some of us are manadragons and some of us are Germanic dragons and some of us are simply pretending to be dragons.
+		I am of course a very very very real dragon from the Germanic variety.  Nothing against the others of course.
+		I am actually quite envious of the feathers…
+		But I am NOT. A. DINOSAUR!!!
+		=> responses_root
+- I like that you're named after a gemstone.
+	Hoohoohoo, you assume the gem wasn't named for me?
+	I kid I kid I kid. My true name is Moraganna Midnight.
+	It is shortened together into Morganite, which is excellent, as it is pink, and I am pink, and it is a beautiful gemstone, and I am a beautiful gem, and it is full of magic, and I am magically full as well.
+	I come from a realm where dragons are very very very much the peoples everywhere, and humans are but a myth, a legend, a fairytale.
+	But I do do do quite enjoy it here, there's so many other species and peoples and races.
+	It's all so fascinating, it gets me feeling INSPIRED.
+	Stand still.  I am going to paint my next masterpiece.  
+	On you. ;)
+	=> END!

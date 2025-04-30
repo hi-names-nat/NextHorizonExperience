@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://xi8vdbulktlp"
+path="res://.godot/imported/knifedrgn.dialogue-ab3646f4d45a59bf79a9ed2108218b6e.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/knifedrgn.dialogue"
+dest_files=["res://.godot/imported/knifedrgn.dialogue-ab3646f4d45a59bf79a9ed2108218b6e.tres"]
+
+[params]
+
+defaults=true

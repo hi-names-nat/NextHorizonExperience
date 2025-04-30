@@ -74,15 +74,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_air3g")
 
 [node name="VERSION" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 282.0
+offset_left = 2.0
 offset_top = 3.0
-offset_right = 320.0
-offset_bottom = 12.0
+offset_right = 1277.0
+offset_bottom = 35.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("4_tytvx")
-theme_override_font_sizes/font_size = 8
-text = "V 1.0"
+theme_override_font_sizes/font_size = 32
+text = "[VERSION IDENTIFIER]"
 horizontal_alignment = 2
 script = ExtResource("5_d3v7n")
 
@@ -208,7 +208,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PreviewLabel" type="Label" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer"]
-custom_minimum_size = Vector2(30, 20)
+custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
 text = "This shall be your form."
 horizontal_alignment = 1
@@ -218,14 +218,14 @@ autowrap_mode = 3
 layout_mode = 2
 
 [node name="ModelRender" type="SubViewportContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(80, 80)
+size = Vector2i(320, 320)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
@@ -263,7 +263,7 @@ theme_override_constants/margin_right = 10
 [node name="Start" type="Button" parent="ContentMargin/MainContainer/MarginContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 68
 theme_override_styles/hover = SubResource("StyleBoxFlat_25ws8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_va7qa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7s2v5")

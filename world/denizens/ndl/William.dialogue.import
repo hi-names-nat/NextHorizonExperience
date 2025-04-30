@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cwxl81a6xmdg7"
+path="res://.godot/imported/William.dialogue-4405ffb5b5fb39934b702d05d0808ad4.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/William.dialogue"
+dest_files=["res://.godot/imported/William.dialogue-4405ffb5b5fb39934b702d05d0808ad4.tres"]
+
+[params]
+
+defaults=true

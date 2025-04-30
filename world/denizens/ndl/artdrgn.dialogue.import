@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bgpfq7mwxg1bn"
+path="res://.godot/imported/artdrgn.dialogue-8977b3ffb8af4af590f0c228ea0f9120.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/artdrgn.dialogue"
+dest_files=["res://.godot/imported/artdrgn.dialogue-8977b3ffb8af4af590f0c228ea0f9120.tres"]
+
+[params]
+
+defaults=true

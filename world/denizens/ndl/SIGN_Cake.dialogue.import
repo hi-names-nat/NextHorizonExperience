@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c1ybuoviyoq4o"
+path="res://.godot/imported/SIGN_Cake.dialogue-02e7c008d8f59a7e5d5ea86d7d29206e.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/SIGN_Cake.dialogue"
+dest_files=["res://.godot/imported/SIGN_Cake.dialogue-02e7c008d8f59a7e5d5ea86d7d29206e.tres"]
+
+[params]
+
+defaults=true

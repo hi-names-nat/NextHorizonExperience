@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://clst5dn27h0yg"
+path="res://.godot/imported/SIGN_Merch.dialogue-7f957f0727f9005b8b2d203b7f710e6f.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/SIGN_Merch.dialogue"
+dest_files=["res://.godot/imported/SIGN_Merch.dialogue-7f957f0727f9005b8b2d203b7f710e6f.tres"]
+
+[params]
+
+defaults=true

@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_name_text_submitted(new_text: String) -> void:
 	player_info.name = new_text
+	Globals.PLAYER_NAME = new_text
 
 func _on_hex_text_submitted(new_text: String) -> void:
 	var c = Color.from_string(new_text, Color.SNOW)

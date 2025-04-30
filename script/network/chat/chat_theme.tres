@@ -4,9 +4,9 @@
 
 [resource]
 default_font = ExtResource("1_2x858")
-Label/font_sizes/font_size = 9
-LineEdit/font_sizes/font_size = 9
-MarginContainer/constants/margin_bottom = 5
-MarginContainer/constants/margin_left = 5
-MarginContainer/constants/margin_top = 0
-TextEdit/font_sizes/font_size = 9
+Label/font_sizes/font_size = 36
+LineEdit/font_sizes/font_size = 36
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_top = 20
+TextEdit/font_sizes/font_size = 36

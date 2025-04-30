@@ -24,5 +24,6 @@ func _on_okay_pressed() -> void:
 	egg_accepted.emit(current_egg_name)
 	if num_eggs == total_eggs:
 		all_eggs.emit()
-	eggNode.queue_free()
-	eggNode = null
+	if eggNode != null:
+		eggNode.queue_free()
+		eggNode = null

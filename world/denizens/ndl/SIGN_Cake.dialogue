@@ -1,0 +1,15 @@
+"Delicious cake"
+(... weird...)
+(Want to try something?)
+- Try the magical device [if Globals.states_dict["ufq"] == 4]
+	(You point the magicReciever at the cake...)
+	(Suddenly... You feel something appear behind you.)
+	do Globals.set_state("ufq", 5)
+	=> END
+- Think [if Globals.states_dict["ufq"] == 5]
+	(There's something more to this, you can tell.)
+	(It makes you deeply uneasy.)
+	(You're not sure, but you feel it'd be best to ignore it for now...)
+	=> END!
+- Nothing interesting here.
+	=> END!

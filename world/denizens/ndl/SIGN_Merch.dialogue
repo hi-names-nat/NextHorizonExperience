@@ -1,0 +1,13 @@
+(There's a sign here.)
+(Let's see...)
+ITEMS
+EGG - 2 FEATHERS
+(everything else is scratched out)
+(Should I buy the egg?)
+- Yes [if Globals.player_feathers == 2]
+	do Globals.set_state("merch_egg", 1)
+	set Globals.player_feathers = 0
+	=> END!
+- No
+	(You decide not to buy the egg.)
+	=> END!

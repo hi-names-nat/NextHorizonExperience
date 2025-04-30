@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bypowjww4t8fo"
+path="res://.godot/imported/Taker.dialogue-ca3e95660ce52cbc45e5bdb38aee90f2.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/Taker.dialogue"
+dest_files=["res://.godot/imported/Taker.dialogue-ca3e95660ce52cbc45e5bdb38aee90f2.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dp3q53mipqb1k"
+path="res://.godot/imported/Sara_Li.dialogue-0950fa1ee088b547154e4fe44244027c.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/Sara_Li.dialogue"
+dest_files=["res://.godot/imported/Sara_Li.dialogue-0950fa1ee088b547154e4fe44244027c.tres"]
+
+[params]
+
+defaults=true

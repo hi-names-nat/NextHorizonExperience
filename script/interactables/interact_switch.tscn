@@ -7,8 +7,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ufxr"]
 size = Vector3(1.39258, 2.59704, 1.57251)
 
-[node name="InteractSwitch" type="Node3D"]
+[node name="InteractSwitch" type="Node3D" node_paths=PackedStringArray("delete_objects")]
 script = ExtResource("1_42cfn")
+delete_objects = [NodePath("Label3D")]
 
 [node name="UseTrigger" type="StaticBody3D" parent="." node_paths=PackedStringArray("Outlines")]
 collision_layer = 4

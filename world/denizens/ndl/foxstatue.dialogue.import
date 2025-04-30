@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://6wnei5g43u6o"
+path="res://.godot/imported/foxstatue.dialogue-61558af0dec9dff22b664ec1e125b9ba.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/foxstatue.dialogue"
+dest_files=["res://.godot/imported/foxstatue.dialogue-61558af0dec9dff22b664ec1e125b9ba.tres"]
+
+[params]
+
+defaults=true

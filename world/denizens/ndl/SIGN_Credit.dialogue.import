@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://epfgpw8gyh01"
+path="res://.godot/imported/SIGN_Credit.dialogue-f27168f9c67e81cb48b216c4efcaf8da.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/SIGN_Credit.dialogue"
+dest_files=["res://.godot/imported/SIGN_Credit.dialogue-f27168f9c67e81cb48b216c4efcaf8da.tres"]
+
+[params]
+
+defaults=true

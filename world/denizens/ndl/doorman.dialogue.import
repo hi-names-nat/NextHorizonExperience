@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://5ob4ruswbjoe"
+path="res://.godot/imported/doorman.dialogue-9e0277e465905267b34df992c1e9dc4b.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/doorman.dialogue"
+dest_files=["res://.godot/imported/doorman.dialogue-9e0277e465905267b34df992c1e9dc4b.tres"]
+
+[params]
+
+defaults=true

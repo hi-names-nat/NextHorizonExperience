@@ -1,0 +1,151 @@
+~ ROOT
+Hey You,
+Yeah, yeah you.
+Yeah. Hey. You want some reaaaal cool stuff?
+come closer, I've got some great stuff to show you.
+Cmoooon.
+- [lb]Approach[rb]
+	Good. Good. I'm glad you have as brilliant a business acumen as I do.
+	Most try to get away when I call out to them.
+	Weirdos.
+	Anyway. Glad you're here. I've got great deals. Great items that could really take your gameplay to the next level, if you know what I mean.
+	He winks at you. 
+	(You feel somewhat grossed out. Shrimp should not be able to wink.)
+	Anyway, buddy, pal. We're buddies aren't we, pal?
+	See.
+	You know. This place has always bothered me, right?
+	Utopia.
+	No worries, no cares.
+	Nobody really trying, huh?
+	What's the point? What's there to gain?
+	I don't know about you buddy, but I need something to drive me.
+	Sure. Those feathers. They're something right?
+	But. No. They're. Not anything. They're valueless.
+	It's. Maddening. In a way.
+	How does this place, work?
+	How does it continue to operate, in spite of it all?
+	I've heard rumors of magic, but that's not all.
+	These others, they seem. Different.
+	I hesitate to say wrong, buddy. But.
+	We need something. We need to establish some sort of new order.
+	A place where folks can really, be driven to do their best.
+	Now, see. 
+	Here's what we're gonna do. 
+	You're gonna take these.
+	(You got 50 disgustingly.... wet... pieces... of... paper?)
+	See buddy. These are... uh... frostbux.
+	The Official Currency of Frostbreak.
+	The new frostbreak. Buddy!
+	See. And I've got great items here for you.
+	You're gonna buy the items from me. aren'tcha?
+	then, when folks see all the great stuff you have...
+	They'll wanna buy stuff too, yeah?
+	So. Let me know what you want.
+	...
+	What? No, you can't see anything!
+	Here, just point to a random part of my body. I've got stuff hidden all over, buddy.
+	~ responses_picking
+	- [lb]Point to his head[rb]
+		Ah! The ol' head-y-doo, huh?
+		Haha, friend, buddy, pal. You are in for a treat.
+		T-R-E-A-T!
+		(he lifts his hat to reveal...)
+		(A miniature cat. No larger than a fist of the average creature.)
+		That's right buddy! It's ol' Jerry!
+		You remember Jerry! From high school.
+		We go way back.
+		You, me, 'N' Jerry!
+		Well. He's a small cat now.
+		Alright buddy! Pony up! That'll be-
+		Erm...
+		I feel bad givin Jerry away.
+		I'll uh. Have to hold on to him. 
+		Just for now.
+		=> responses_picking
+	- [lb]Point to his briefcase[rb]
+		Ohoho!
+		You know, nobody's ever gotten a good look inside here before.
+		You're gonna be the first to see my most valued item.
+		This really is like Pulp Fiction, isn't it buddy?
+		I sure do love that movie. The whole... uh...
+		(He's looking around, you seem to see sweat, or is it condensation, dripping down his brow)
+		Yeah... So. The briefcase. Check it pal.
+		(He cracks open the briefcase to reveal...)
+		(A single lego.)
+		That's right.
+		A weapon of mass destruction. constructed from materials enough to kill a planet.
+		The ever-material.
+		Like the most dangerous of landmines, stepping on the weapon will destroy you.
+		But not physically. Mentally. Emotionally.
+		Follow me, bud?
+		And, the best pa- Oop!
+		(He dropped it.)
+		(It's sitting on the ground now.)
+		...
+		(...)
+		(You both have silently decided to not step anywhere near that area.)
+		=> responses_picking
+	- [lb]Point to his left side[rb]
+		Lefty, huh?
+		I'll tell you what buddy, you've got good taste. This is deeee-luxe.
+		You're gonna be over the moon when you see this. It's amazing.
+		Shocking.
+		You'll be the envy of the whole haven. Huh?
+		Alright bud, cmere. Look. Come closer.
+		(He ruffles around his pocket (he has a pocket?) to reveal...)
+		(...A fistful of deli ham.)
+		(It doesn't smell, luckily.)
+		That's right buddy! Ham!
+		Well and true. A rarity in these parts!
+		That's right, have you noticed nobody sells ham around here?
+		How strange! Well I'll be the first!
+		Cmon buddy! Ham! What about it!
+		*You offer him the money...
+		*He reaches for it...
+		*...and drops the ham.
+		...
+		...Well, that one's bust.
+		=> responses_picking
+	- [lb]Point to his right side[rb]
+		Over here, huh?
+		Alright bud, well let's see what's in door number four, huh?
+		(He reaches behind his right side...)
+		(And produces...)
+		(A single sticker, depicting an individual with an odd smile)
+		That's right! It's...
+		This guy.
+		Sorry bud, I've heard the kids know about this guy?
+		Have you heard of him? Germy? Germa? I'm not sure.
+		But all I know is, you take this, and the kids will LOVE you, pal.
+		You'll turn them all into good little businessmen like us!
+		Alright bud.. You know what...
+		This one's on the house. Just for you.
+		=> responses_picking
+	- [lb]Point to his... uh...[rb]
+		Oh! Buddy! Hey! We're not that close yet! Take me for a drink first, at least.
+		Alright, since you're so interested, I was keeping this for myself... But...
+		Since we're such good buddies, pal, such good pals, buddy.
+		I'll make an offer you can't refuse.
+		(He reaches into his pants..)
+		(...and produces...)
+		(A pendant of cold iron)
+		You know, to be honest, I expected better.
+		I don't even know why I have this.
+		It's not interesting, or worth any value.
+		It's not, anything. really.
+		Huh. 
+		...
+		How-How much would you spend on this, you think pal?
+		(...)
+		What?
+		What's with the look?
+		Did I say something wrong? 
+		=> END!
+- [lb]Back away, slowly.[rb]
+	Nooooooo...
+	Please come back!
+	P-please....
+	Please?
+	I don't manage well by myself...
+	...
+	=> END!

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://csijslal44avl"
+path="res://.godot/imported/TechDrgn.dialogue-979b6ad6fbcd43698f427aa9ec48c06d.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/TechDrgn.dialogue"
+dest_files=["res://.godot/imported/TechDrgn.dialogue-979b6ad6fbcd43698f427aa9ec48c06d.tres"]
+
+[params]
+
+defaults=true

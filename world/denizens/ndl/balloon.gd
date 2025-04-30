@@ -34,6 +34,7 @@ var _locale: String = TranslationServer.get_locale()
 ## The current line
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
+		waiting_for_reponse = false
 		is_waiting_for_input = false
 		#balloon.focus_mode = Control.FOCUS_ALL
 		#balloon.grab_focus()
@@ -72,12 +73,14 @@ var dialogue_line: DialogueLine:
 			balloon.focus_mode = Control.FOCUS_NONE
 			responses_menu.show()
 			waiting_for_reponse = true
+			%TimeoutBalloon.start()
 		elif dialogue_line.time != "":
 			var time = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
 			await get_tree().create_timer(time).timeout
 			next(dialogue_line.next_id)
 		else:
 			is_waiting_for_input = true
+			%TimeoutBalloon.start()
 			#balloon.focus_mode = Control.FOCUS_ALL
 			#balloon.grab_focus()
 	get:
@@ -131,13 +134,14 @@ func _process(_delta) -> void:
 
 #how interact works with this. very hackney
 func continue_dialogue(override: int):
+	%TimeoutBalloon.stop()
 	if waiting_for_reponse:
 		if override == 0: return
-		%ResponsesMenu.response_ray(override)
-		waiting_for_reponse = false
+		#waiting_for_reponse = false
+		if !%ResponsesMenu.response_ray(override): return
 	else:
 		next(dialogue_line.next_id)
-	
+	%ExplainPrompt.visible = waiting_for_reponse
 
 ## Start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
@@ -194,3 +198,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_timeout_balloon_timeout() -> void:
+	queue_free()

@@ -126,18 +126,20 @@ func _on_response_mouse_entered(item: Control) -> void:
 
 	item.grab_focus()
 
-func response_ray(response_num: int):
+func response_ray(response_num: int) -> bool:
+	if response_num > responses.size(): return false
 	var item = responses[response_num-1]
 	print(item)
-	if !item.is_allowed: return
+	if !item.is_allowed: return false
 	response_selected.emit(item)
+	return true
 
 func _on_response_gui_input(event: InputEvent, item: Control, response) -> void:
 	if "Disallowed" in item.name: return
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		get_viewport().set_input_as_handled()
-		#response_selected.emit(response)
+		#get_viewport().set_input_as_handled()
+		response_selected.emit(response)
 	elif event.is_action_pressed(&"ui_accept" if next_action.is_empty() else next_action) and item in get_menu_items():
 		#get_viewport().set_input_as_handled()
 		response_selected.emit(response)

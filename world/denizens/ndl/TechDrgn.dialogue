@@ -1,0 +1,248 @@
+~ ROOT
+Huh?
+Oh, oh. Sorry! Sorry. sorry.
+Did you need to get this way?
+Sorry! I knew I shoulda cleaned up when I heard a new chain was opening.
+But uh, I was just so tired. I stayed up all night trying to get something working...
+I passed out for a few hours, you just caught me waking up...
+So uh. Hi!
+I'm Arynn.
+Yeah. Spelled like that.
+Uh.. What else.
+I'm dragons. I'm big on older tech..
+( She glances at the pile of yellowed plastic, glass and silicon )
+...Obviously, haha,
+So what's up?
+~ responses_root
+- Tell me about yourself!
+	Me!
+	Um! I'm.
+	I'm Arynn like I said. I'm dragons like I said also.
+	I live here, and I help out with tech around here.
+	Sure, most things run on magic. But when you systemize magic into physical form, it's really similar to technology.
+	I work with that stuff too.
+	So the TVs here, the game consoles. All managed by me. 
+	I brought most of these in from my ventures out.
+	I also maintain this place, the games hut.
+	(she waves her paws around, gesturing to the building surrounding you both)
+	Welcome to the games hut, by the way!
+	I Collect the games, and other stuff.
+	I'd suggest you try some out, but it doesn't look like you could hold a controller right now.
+	Maybe later. I have a ton of suggestions for you when you can!
+	~ responses_about
+	- I can't hold a controller?
+		...Yeah.
+		It's weird. I haven't seen that before.
+		We haven't had a new chain in a while. I'm guessing it's a symptom of that.
+		You don't seem, fully here yet. You've probably noticed.
+		Your fellow visitors, they're not being fully reflected yet. They have, well, what I'd call avatars representing them.
+		Some sort of, fox, dragon, thing. A fragon. 
+		A Fa-
+		No, I shouldn't say that.
+		Anyway. In this form, only a few things seem to be open to you. 
+		I imagine you can't leave the haven right now. Have you tried?
+		I'm sure as your chain continues to strengthen you and your friends will be further reflected.
+		Just give it a bit.
+		I dunno, maybe we're all a game and the developers can only do so much at a time. Who's to say!
+		Ha. Imagine.
+		=> responses_about
+	- The games hut?
+		Yup! You're in it right now.
+		This is the games hut. My personal little section of the haven.
+		I like games a lot. I try my best to maintain a collection of the best of both physical and digital games.
+		You know, that reminds me-
+		Your world has those, right?
+		Oh my god.
+		Finally.
+		NEW GAMES.
+		Okay. Okay. So like. I can't go right now. I'm not sure what'd happen if we tried to pass through your chain right now.
+		But. Eventually.
+		I'll have to head over there and see what y'all've got.
+		You could show me around, if you'd like! That'd be a lot of fun!!!
+		if Globals.states_dict["ufq"] > 3
+			Thanks for bringing me "Earthbound", by the way.
+			If you find anything else like that please don't hesitate to bring it around. Even just to show off!
+		else
+			Heck, you could try bringing games through the chain and giving them to me. That'd be nice!
+			I'm not sure if they'd pass through yet, though.
+		But. Yeah. You can hang out and watch folks play games, maybe.
+		Though right now everyone's panicking over the new chain. You won't find many of us relaxing.
+		I should put my hoard away...
+		=> responses_about
+	- Your ventures?
+		Yeah!
+		Every so often I traverse a chain and collect a bunch of tech and games from that reality.
+		That's where all of this is from, it's various stuff from a buncha different realities.
+		So for instance...
+		(She points to the wall of board games)
+		I have this game, Shining Bronze. It's super fun. Steampunk Dystopia-western TTRPG. You can modify your character with steam-powered cybernetics. It's absurd. It's awesome.
+		I found that one in a place who's chain is closed now. It's one of the only artifacts from that place.
+		Maybe one day it'll reconnect.
+		...
+		One thing I've noticed is that a lot of art seems to transcend realities.
+		I'm guessing it's something to do with the fact that worldstreams flow outside of reality, and that art is said to be a pure expression of one's mana.
+		But, things like Dungeons and Dragons, like The Legend of Zelda, the Mana series?
+		They almost always exist.
+		If not in the form you're used to them, in a different form.
+		Isn't it so interesting? At some point I want to study that.
+		I'm decently mana sensitive. I've been practicing to be more aware.
+		Some of my friends are much more than I though.
+		Once I hone my skills a bit more... I really wanna look into this.
+		Frostbreak is an excellent place for mana research.
+		A true mana hotbed, as it were.
+		~ responses_ventures
+		- "The Legend of Zelda?"
+			Oh!
+			Iiiiiiinteresting. I'll have to pick your brain, when you have the time.
+			But - Okay. Zelda is like.
+			So have you played any action RPGs?
+			They're a pinnacle example of those in a lot of realities.
+			In some, they're manga, in some, it's a board game.
+			But in most, they're action RPG video games.
+			It's classic 'boy saves girl' stuff, but it is really fun.
+			And the main character is cute.
+			You should try it, when you get the chance! You can borrow a copy of my favorite and the console if you need.
+			=> responses_ventures
+		- "Shining Bronze?"
+			Shining Bronze is really cool.
+			Do you not have it in your reality? Interesting!
+			Maybe it just doesn't exist... yet. that happens sometimes.
+			Who knows. You might know someone working on it.
+			You should try it, if you get the chance to. It's really fun.
+			This definitely isn't bias or anything.
+			I just really like it!
+			=> responses_ventures
+		- [lb]Return[rb]
+			=> responses_about
+	- Magic?
+		Okay. So there's magic, there's mana and there's lifespark (or worldspark). I assure you, you're familiar with all of them, even if it doesn't seem it.
+		Magic is the usage of latent mana to achieve tasks. I.E. Summoning a fireball, changing the color of your hair, warping to a different point in your reality. That sort of thing.
+		Mana is distinct, detectable latent magic energy. You can store it within yourself, but there is also plenty surrounding you at almost all times.
+		You can detect mana. You can detect how it feels, how much is present in a place.
+		Have you ever felt like something was wrong when entering a place? Like some core part of you, not your body, but your... you, was screaming to get out of there?
+		That's your manoception. Detecting either concerningly low, or concerningly strange latent mana.
+		You can do this because deep within you, you are magic.
+		You use mana to exist. Even if you're biological, you still as a creature with sentience leverage magic to be You.
+		That's called lifespark. The magic fire within each of us.
+		Some are entirely magical. manifesting themselves entirely through the use of magic.
+		I'm jealous of them. Often... There's one among your group, isn't there?
+		She seems. Really cool. I'm kind of intimidated to talk to her, actually...
+		I-
+		I digress. Anyway.
+		Places also have lifespark. Each reality has its own lifespark, each world in that reality, too. And you can get more and more minute with it until we're talking in absurdities.
+		Frostbreak in fact, was once a place without lifespark. Chains feed lifespark from their host realities to frostbreak, a pocket reality.
+		Because pocket realities distort worldstreams, the 'highways' that trancend realities. 
+		creating a multidimensional network of mana.
+		This is also how chains exist, they're natural creations of mana!
+		...Sorry.
+		This might be one of my special interests.
+		Figuring out all of this,
+		See, I come from what you'd call a 'low mana' world. We're not overlapping many worldstreams. So magic is usually restricted to lifespark.
+		You seem to come from a reality like that, too. 
+		I can tell in the way you're reacting to the increased mana content here.
+		It was so incredible to figure all this out. Learning that magic is real. that it's everywhere. 
+		That it's us.
+		It was. A realization for me. I had never believed in 'magic'.
+		Because the magic I had been told was magic wasn't magic. it was nonsense.
+		Tricks with boxes, simple illusions from tricks of light or sleight of paw.-
+		Sorry - I'll stop now!
+		I'm sure you have friends who'd also love to talk your ear off about this, too.
+		If you have ears, that is. I can't tell. Glasses and everything.
+		=> responses_about
+	- [lb]RETURN[rb]
+		=> responses_root
+- What's up with the pile?
+	[wave]Ah!!!! Yeah!!!![/wave]
+	I've got so much stuff!!! [wave]AAAaaaaaa[/wave] aokay okay okay okay so like!
+	(She's trilling in between words.)
+	look. Okay. I know you probably can't discern every item here, so here's a list of the newer stuff and just ask about what you'd like, okay??
+	[wave]thhhankyouforaskingggg[/wave]
+	- Purple Computer
+		Ahhhh!!!! Yeah this is a SGI Indy 2.
+		It's a 3D workstation from the ninties. One of your friends just gave it to me as a gift!
+		A lot of really big games were made on this, and there's a lot of stuff that only works on it.
+		It uses a weird, unique version of UNIX which I'm personally fascinated by. Never seen anything like it.
+		If you've ever seen Jurrasic Park, you've seen the OS of the Indy machines, and also their work! The dinoasurs were done using VFX on Indy units.
+		They're super duper duper cool. 
+		I've wanted to try actually making something on them. I have a toolkit for a console that I really wanna try to develop for that ONLY works on SGI!
+		Also, they're really. Really pretty.
+		=> responses_root
+	- Green and grey tablet
+		Oh!!!! So this is a Newton.
+		It was an early tablet computer. Before the company's super successful portable computers, they made this.
+		This was during their weird era. You can kind of tell. It was released in '93 and it's pretty behind the times for a premium device.
+		The screen is three-tone monochrome. Green and black, just like the Game Boy, if you know what that is.
+		It's a PDA, it's a digital note taker. Hell it has the start to auto-voice transcription and digital assistant features that you'd see in the company's later stuff.
+		Shame they don't do stuff like this anymore, huh?
+		=> responses_root
+	- All in one PC.. thing
+		Oh! This thing is really, like, useless. And that's why I love it so much.
+		This is a "netstation", a type of computer that became prevalent with the rise of the web in the 00s.
+		Basically really cheap, bottom-of-the-barrel class PCs, usually using cheap cpus and no dedicated gpu. 
+		Designed only for networking, checking email.
+		The web was a big thing. The new fad. Everyone wanted to get online.
+		Goal with these was an easy entry-level way to do so.
+		This one was new-in-box when i got it, still have the box, i just tend to keep it out as a display piece.
+		aaand because, uh.
+		[wave]aha.[/wave] Dragon behaviors. you understand.
+		The odd swivel design with the orblike body really does it for me.
+		I've wanted to get another one just to try to fit a modern PC inside the case but, I doubt it's ever happening since I'd also want to replace the LCD.
+		And that's a process. Uh.
+		So. yeah!
+		=> responses_about
+	- Device with a.... Strange contraption on top?
+		Okay. So you probably recognize a decent portion of this.
+		This is an Amiga. You know, THE multimedia computer.
+		I've just built a custom expansion card to be able to communicate with magic-based hardware.
+		Which is the weird thing you see sticking out the top.
+		Don't mess with it too much. It's really hackney. The circuit board is handbuilt using wires and a breadboard that's floating around in there.
+		Haha. I'm gonna print a PCB for it at some point. It just takes a bit to... Figure out how to get those here.
+		The magic-communication device isn't my own, I actually grabbed it on one of my ventures. in a place where they use magic much the way that low-magic worlds use technology.
+		They still use thinking rocks. But it's more of a tool for managing mana, rather than outright doing the thing.
+		Anyway-
+		I built my own little piece of software on the amiga to be able to get those two to work together. 
+		Now it acts as the main management hub station for all of the magic-based devices in the haven.
+		It's in no way refined. You'd vomit if i showed you what using it is like.
+		But it work for me, and it works for everyone else, so It's okay!
+		=> responses_root
+	- What the hey is this?
+		...hahaha. Confusing, right?
+		So yeah. This is technically technology, of a sort at least.
+		It's something I had never seen before. Organic technology.
+		Check it, this computer. It's not entirely a computer. It's also a bioform. 
+		Closest to what you'd consider the Fungi kingdom. 
+		It depends on only its own generated power, using a combination of storage via organic compounds and photosynthesis. 
+		The silicon within and the fungus work symbiotically. It is truly fasinating.
+		It doesn't have an operating system or anything, at least not yet. It simply boots into a command line called MIL. 
+		I've never heard of it before. Must be only in that world, it was a strange one.
+		The folks over there figured out how to symbiotically fuse Plantae and Fungi with tech. No magic, just. Pure biotics.
+		It's incredible.
+		Though, with one downside.
+		It feels. And as such. If it doesn't wanna work, it doesn't work.
+		So, uh, don't upset it, huh?
+		I've been trying to work with it to make an operating system for it.
+		Don't upset it, please. Or all my work might suddenly be gone.
+		=> responses_root
+- [lb]QUEST[rb] Do you want this game I found? [if Globals.states_dict["ufq"] == 3]
+	Oh.
+	OH!
+	You. You'd give this to me?
+	What is it?
+	(She pulls you aside to a station, removes the game from its packaging, and slots it into the conveniently-placed game console)
+	...
+	Oh.
+	This! This is Mother! Mother 2, to be exact.
+	Wait. It's called "EARTHBOUND" where you come from? And only in some regions?
+	THAT'S SO FUNNY.
+	This version also comes with a whole guidebook. That's so cool but i bet it made the game a bit less of a success since it was more expens-
+	Sorry. I'll stop. We can gush about this later. I can gush about this later. On my blog.
+	Uhhh. What should I give you in return?
+	OH! Here!
+	do Globals.set_state("ufq", 4)
+	({{Globals.PLAYER_NAME}} got the magicReciever)
+	...Are all the items you're picking up formatted like Mother items?
+	...Okay, that being what it is. This is a tool for messing with magical devices.
+	If you see anything weird, try pointing this at it and fiddling with it. Something good might happen!
+	...Or something bad, but It's okay, I can fix it.
+	But thank you for this! Anyway, where were we?
+	=> responses_root

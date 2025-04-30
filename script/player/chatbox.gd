@@ -16,12 +16,12 @@ func _ready():
 		if e == "":
 			close_chat()
 			return
-		on_chat_sent.emit()
 		visible = false
 		%ChatInput.visible = false
 		%ChatInput.text = ""
 		send_chat_remote("%s: %s" % [player_name, e])
 		rpc("send_chat_remote", "%s: %s" % [player_name, e])
+		on_chat_sent.emit()
 		)
 
 func _physics_process(delta: float) -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bacsdshd3bdu5" path="res://script/cloth01.png" id="1_00lo5"]
 [ext_resource type="PackedScene" uid="uid://c2us5cfpjvow5" path="res://script/player/player_start.tscn" id="1_7tt72"]
-[ext_resource type="Script" path="res://dialogue_object_nouveau.gd" id="3_n8yl1"]
+[ext_resource type="Script" path="res://script/interactables/dialogue_object_nouveau.gd" id="3_n8yl1"]
 [ext_resource type="Resource" uid="uid://1g67kx2p77fd" path="res://world/denizens/ndl/testboyo.dialogue" id="4_7gjgu"]
 [ext_resource type="Script" path="res://script/interactables/g_use_component.gd" id="4_d4wsb"]
 [ext_resource type="Material" uid="uid://dpip4gdun5tc8" path="res://world/materials/outline.tres" id="6_kdrm7"]

@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbd8f8ail12dy"]
+[gd_scene load_steps=13 format=3 uid="uid://dbd8f8ail12dy"]
 
 [ext_resource type="Script" path="res://script/player/g_player.gd" id="1_0mupo"]
 [ext_resource type="Texture2D" uid="uid://npbaotfvgrg" path="res://view_border.png" id="2_rc5qc"]
+[ext_resource type="Script" path="res://script/player/community_egg_manager.gd" id="3_f2qax"]
+[ext_resource type="Texture2D" uid="uid://rrmxmdg8ceqv" path="res://world/objects/communityEgg.png" id="4_dtvaa"]
 [ext_resource type="PackedScene" uid="uid://x3c2ryryppc" path="res://script/player/chat.tscn" id="5_b34l4"]
+[ext_resource type="Script" path="res://script/player/chatty_egg_man.gd" id="5_oin45"]
+[ext_resource type="Texture2D" uid="uid://bbijeovp6ck77" path="res://world/objects/chattyEgg.png" id="6_8x2mw"]
 [ext_resource type="Theme" uid="uid://cp2lvhk230w7h" path="res://engine/EggUI_Theme.tres" id="7_it024"]
 [ext_resource type="Texture2D" uid="uid://ctmcru4i2506i" path="res://world/objects/artistEgg.png" id="8_eoubn"]
 [ext_resource type="Script" path="res://script/player/egg_get.gd" id="8_vx5sw"]
@@ -113,8 +117,29 @@ offset_right = 40.0
 offset_bottom = 40.0
 stretch_mode = 3
 
+[node name="CommunityEggMan" type="Control" parent="PlayerUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_f2qax")
+egg_name = "Community Egg"
+egg_Desc = "Sent a chat message!"
+egg_image = ExtResource("4_dtvaa")
+
+[node name="ChattyEggMan" type="Control" parent="PlayerUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_oin45")
+egg_name = "Chatty Egg"
+egg_Desc = "Talked with all the denizens!"
+egg_image = ExtResource("6_8x2mw")
+
 [node name="Chat" parent="PlayerUI" instance=ExtResource("5_b34l4")]
 unique_name_in_owner = true
+visible = false
 
 [node name="EggGet" type="Control" parent="PlayerUI"]
 unique_name_in_owner = true
@@ -159,11 +184,12 @@ horizontal_alignment = 1
 [node name="EggDesc" type="Label" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Jokey description of the egg"
+text = "DESCRIPTION"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 120)
+custom_minimum_size = Vector2(800, 480)
 layout_mode = 2
 
 [node name="EggTex" type="TextureRect" parent="PlayerUI/EggGet/MarginContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]

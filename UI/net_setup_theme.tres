@@ -8,13 +8,13 @@
 texture = ExtResource("3_f28si")
 
 [resource]
-Button/font_sizes/font_size = 14
+Button/font_sizes/font_size = 56
 Button/fonts/font = ExtResource("1_682kr")
 Button/styles/normal = null
-Label/font_sizes/font_size = 14
+Label/font_sizes/font_size = 56
 Label/fonts/font = ExtResource("1_qorel")
-MarginContainer/constants/margin_bottom = 5
-MarginContainer/constants/margin_left = 5
-MarginContainer/constants/margin_right = 5
-MarginContainer/constants/margin_top = 5
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
 Panel/styles/panel = SubResource("StyleBoxTexture_lsgy2")

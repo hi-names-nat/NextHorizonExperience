@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://g6rpin1hdmdq"]
+[gd_scene load_steps=7 format=3 uid="uid://g6rpin1hdmdq"]
 
-[ext_resource type="Script" path="res://script/interactables/dialogue_object.gd" id="1_4t7e0"]
-[ext_resource type="PackedScene" uid="uid://cdg0b4vllc1p4" path="res://script/interactables/g_billboard_text_component.tscn" id="2_2qs8k"]
+[ext_resource type="Script" path="res://script/interactables/dialogue_object_nouveau.gd" id="1_co2hs"]
 [ext_resource type="Script" path="res://script/interactables/g_use_component.gd" id="3_35yeh"]
 [ext_resource type="Texture2D" uid="uid://danhkkqr2voqs" path="res://world/denizens/tex/T_DiamondSona.png" id="4_h1360"]
 
@@ -22,7 +21,7 @@ billboard_mode = 1
 
 [node name="DescriptionObject" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00936151, 0.0155412, 0.00316596)
-script = ExtResource("1_4t7e0")
+script = ExtResource("1_co2hs")
 
 [node name="UseTrigger" type="StaticBody3D" parent="." node_paths=PackedStringArray("Outlines")]
 collision_layer = 4
@@ -48,7 +47,6 @@ pixel_size = 0.0072
 billboard = 1
 texture = ExtResource("4_h1360")
 
-[node name="GFloatingText" parent="." instance=ExtResource("2_2qs8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00748575, 1.70771, 0)
-
-[connection signal="OnTextEnd" from="GFloatingText" to="." method="_on_text_end"]
+[node name="TextDisplayPoint" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

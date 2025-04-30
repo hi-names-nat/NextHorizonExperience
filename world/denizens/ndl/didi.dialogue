@@ -1,0 +1,75 @@
+~ ROOT
+(You are approached by one of the wenches waiting on this Tavern).
+(Her bust is spilling out of the top of her dress, and her apron is cinched so tight you find yourself pondering whether she has organs beneath all that fat).
+(She has a thick, fluffy, red fox tail waving out from behind her dress, and the cute, tiny nose of a mouse).
+Howdy there, darlin’! Dinin’ in, seat at the bar, orderin’ to-go?
+~ response_root
+- Dining in?
+	~ dine_in
+	Take a seat wherever you'd like then, I'll grab you a menu. 
+	- What do you serve here?
+		Standard fried fare, sandwiches, and a few random things, like quesadillas and rice bowls.
+		Soup of the day is Sockwash.
+		- Sockwash soup?
+			We dump whatever scraps we've got leftover in the kettle we use to clean our clothes.
+			Some people say it reminds them of cilantro…
+			=> END!
+- I'll just sit at the bar…
+	~ bar
+	Not a problem darling!  We serve local Haven brew here, no taste like it anywhere else.
+	- What makes it different?
+		~ bar_2
+		Things produced in the Haven have a unique quality about them, something to do with the thick mana here.
+		It tickles your tongue, and the bubbles leave behind only the flavors that your own taste buds find palatable, and you don't detect anything you wouldn't normally like.
+		Not all food does that here, just in case you were about to go digging in the garbage.
+		More or less, whatever magic it is that turned this pocket into the beautiful mountain town that it is now is also incredibly tasty when fermented and aged for 6 months!  
+		I guess it could also be a product of favoritism – doesn't everything taste good in a utopia?
+		 It wouldn't be the best place in all the planes of reality if the food and drink weren't also good!
+		=> END!
+- I'd like to take an order to-go, actually!
+	Sure thing, sweetheart.  Here's a quick look at the menu!
+	- Spirited Hush puppies
+		Deep fried and golden delicious! 
+		Each ball contains the soul of a lost puppy, and it's said that consuming it returns it to its mother.
+		Pairs great with our fish fry!
+		=> END!
+	- Fish Fry
+		A plate of shoestring potatoes that have been arranged into the shape of a fish.
+		=> END!
+	- Mother and Child
+		A classic Japanese bowl, oyakudon.  Chicken and eggs over rice!
+		=> END!
+	- [lb]Next[rb]
+		- Questadilla
+			A standard quesadilla… folded like a fortune cookie.  Each one contains a quest! 
+			- Can I order the questadilla?  
+				if Globals.states_dict["ufq"] == -1
+					One questadilla, yes dear.  Takes about five minutes to toast up, I'll have that right out for you.
+					The questadilla is served to you on a ceramic diner plate with a leaf of decorative lettuce and two ramekins, one with sour cream and the other with salsa.)
+					(You open the questadilla)
+					(there is a StrangeCoin inside!)
+					({{Globals.PLAYER_NAME}} takes it.)
+					do Globals.set_state("ufq", 0)
+					Oh, that coin looks familiar.
+					Will collects things like that. You should ask him about it.
+					He's upstairs, actually.  I think you should show it to him.
+					=> END!
+				else
+					Sorry hun, only one per customer. 
+					=> END!
+		- Soulless Sandwich
+			A slice of american cheese on white sandwich bread with mayonnaise served on the side for dipping.  We are not offering it toasted at this time.
+			=> END!
+		- The Hamburger Standard
+			It's a patty made of ground ham on a brioche bun baked right here in the Haven!  Comes with lettuce, pickles, onions, and frogspawn.
+			=> END!
+		- I've decided not to order anything afterall
+			Thank you so much for stopping in!  You're free to come by any time, I always love an excuse to stand around and chat instead of doing my job.
+			The food is all local, so you can't get it anywhere else! 
+			if Globals.states_dict["didi_feather"] == 0
+				Oh, and for letting me get a break in, why don't you take one of these with you?
+				set Globals.player_feathers += 1
+				do Globals.set_state("didi_feather", 1)
+				([wave]You got 1 feather![/wave] In-game only, sorry!)
+				(You have {{Globals.player_feathers}} feathers in total.)
+			=> response_root

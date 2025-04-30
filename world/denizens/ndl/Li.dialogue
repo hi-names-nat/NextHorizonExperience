@@ -1,0 +1,50 @@
+~ ROOT
+g̵f̷d̸k̶s̸a̷F̶ ̴:̴j̷d̸K̷J̸A̵S̷ ̴J̷F̶k̴s̸j̶a̷k̴j̶f̵s̷j̴a̷ ̷f̸s̴a̶o̵f̸s̸a̸i̸o̷?̸?̸ ̴/̶d̵s̵i̴k̸a̵L̷:̷F̶K̷S̷A̴L̷:̸F̴G̵s̸k̴a̴l̵f̸s̴l̵!̴
+J̶K̵G̷A̴S̴J̶k̸j̶s̶a̶d̵k̸s̷k̶j̷a̸f̴j̸k̴s̶a̵k̴j̴f̸j̷k̶s̸a̵k̶j̶f̷j̸a̵s̶f̷g̴k̸j̵l̴g̴a̵ ̷w̵o̷i̴a̶?̷?̸?̶ ̷f̸J̷A̷K̷G̶F̵k̴j̶s̵a̸g̶j̶k̵a̵ ̴!̶ ̴A̷s̶a̷k̵g̸k̷a̷k̵.̷ ̵P̶L̴,̵s̸a̸l̷e̶
+- Um?  Hola…?  Hablar Common…?
+	A̷J̵G̴S̴J̶A̶K̸J̷e̸j̵k̴e̴?̶?̵ ̸C̶J̷G̶A̵ ̵I̴ ̴A̶J̷G̶E̷L̵ ̵ ̷?̴ ̶?̶ ̶T̷H̸S̷I̵ ̵G̷J̸A̶D̷M̷ ̴A̴ ̵T̴H̵I̴G̸
+	(You watch as the purple man reaches into his helmet...)
+	(and feels around, before pulling out a cable that he then loops around one of the larger horns on his face)
+	(then tucks into the collar of the bodysuit under his armor.  He clears his throat, suddenly speaking in perfect Common.)
+	I said HEY, Can I help you?
+	~ root_responses
+	- That's a cool little trick you did.
+		It's a universal translator, Numerian tech.  Relies on brain waves, so if it's too far from my head, it won't work.
+		- Does it know what language I'm speaking?
+			It automatically populates to me in my own language, Philippii.
+			- Can you tell that I'm speaking japanese now?
+				No.  You're actually xenolingual without technological help?  That's so cool.
+				=> root_responses
+	- You're not an animal I recognize.
+		I'm a person!  I'm a Philipos, a near-extinct race of zookeepers.  
+		- So you have a lot of pets?  Can I pet them?
+			I WISH I DID.
+			My girlfriend SARA does, she has a cat who I love and totally get to pet whenever I want now.
+			Unfortunately [wave]I[/wave] am not a zookeeper, I am a military refugee.
+			- I'm so sorry.  At least you're safe here.
+				Yeah, I do feel pretty safe here, you're right.
+				And there's nothing you need to apologize for.
+				[wave]I’m[/wave] the one who betrayed the largest Empire in the galaxy.  
+				Oh yeah!  I did that.
+				Make no mistake.
+				They were going to kill my girlfriend–they wanted ME to kill my girlfriend.
+				Well, she wasn't my girlfriend yet.
+				She is now though.
+				Imagine if that hadn't worked out?  Haha, would have been fucked.
+				… Sorry.
+				I kind of miss her.
+				=> root_responses
+	- Who are you?
+		I'm Li.  Who are you?
+		- I'm {{Globals.PLAYER_NAME}}!
+			Nice to meet you. 
+			Say, you haven't seen my girlfriend Sara around anywhere, have you? 
+			She's pretty short… yellow hair, a blue space suit.
+			She's really serious, and she's probably looking for me too…. I miss her.
+			if Globals.has_met_sara
+				- Yes, actually. I talked to her over there.
+					[He takes off sprinting without a word.]
+			else
+				- I'll keep an eye out.
+			set Globals.has_met_li = true
+			=> END!

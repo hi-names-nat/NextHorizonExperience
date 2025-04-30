@@ -1,0 +1,36 @@
+~ ROOT
+Oh, you're waiting for me to– erm. Sorry, hello.  I'm busy.  I am not going to be of any help, I'm not from around here.
+~ root_responses
+- Where are you from?
+	Klonscia, another planet.
+	~ klonscia_responses
+	- Where is that?
+		Uh, SBC749 Sector 39 of the 10th arm, orbiting around ST5738-89.
+		–None of my equipment is working, I cannot tell you where we are in respect to that.  It's not next door.
+		=> klonscia_responses
+	- That's a stupid name.
+		I agree.  All names the Numerian Empire come up with are dumb, even from a xenolingual standpoint.  
+		And unoriginal.
+		Every continent, river, city, mountain, and grain of sand is simply named after the planet name.
+		Lake Klonscia, which feeds into the Klonscia River and eventually empties out into the Klonscia Sea.  
+		… [wave]Anyway[/wave].
+		=> klonscia_responses
+	- [lb]Return[rb]
+		=> root_responses
+- Why do you keep looking around and squinting?
+	I'm looking for someone…We got separated after we passed through into this…realm?
+	- Maybe I could help?
+		Yeah I really want to.  Oh, you're offering to help?  Um…
+		- Just tell me what they look like.  Oh, and their name.
+			He's tall, and wide.  Just, a very large man.  
+			He's wearing a purple suit like mine.  
+			He is also purple, with orange horns.  His name is Li.
+			if Globals.has_met_li
+				- Yes, I met him.  He's over there.
+					(She's already begin to run off. She stops and speaks to you)
+					Thank you.
+					(She's gone)
+			else
+				- I'll keep an eye out.
+			set Globals.has_met_sara = true
+			=> END!

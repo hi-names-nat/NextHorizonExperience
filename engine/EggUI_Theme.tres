@@ -4,11 +4,11 @@
 [ext_resource type="FontFile" uid="uid://dhkuel4fetba0" path="res://UI/ChevyRay - Magic Book.ttf" id="2_gtpbt"]
 
 [resource]
-Button/font_sizes/font_size = 17
+Button/font_sizes/font_size = 68
 Button/fonts/font = ExtResource("1_kwcks")
-Label/font_sizes/font_size = 12
+Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("2_gtpbt")
-MarginContainer/constants/margin_bottom = 5
-MarginContainer/constants/margin_left = 5
-MarginContainer/constants/margin_right = 5
-MarginContainer/constants/margin_top = 5
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20

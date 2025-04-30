@@ -1,0 +1,33 @@
+~ ROOT
+Oh!
+[lb]S[rb] Hello again.  Thank you for helping us.
+[lb]L[rb] Yeah, thank you.
+~ root_reponses
+- Are you two going to be leaving now?
+	[lb]L[rb] No, not yet
+	[lb]S[rb] The “chain" that brought us here… I don't understand how it works, and I don't know how to go back.
+	[lb]S[rb] We definitely need to–I have no idea how interdimensional travel relates to time, and I couldn't imagine letting Ryoko think we died, after everything she did for us.
+	[lb]L[rb] Plus, it's pretty nice here…
+	- Are you gonna move in?
+		[lb]L[rb] Oh I have no idea.
+		[lb]L[rb] I mean, it's really different from our world, and if any of our tech breaks there's no one to fix it, and our cat is on the spaceship somewhere, and-
+		[lb]S[rb] No.
+		=> root_reponses
+- Cool sci-fi tech!
+	[lb]L[rb] Benefits of the Empire, I guess.
+	* Sara places her space helmet–designed similar to a motorcycle helmet– onto her head, completely masking her identity.
+	* She then whips out her gun, something that looks similar to a cartoon ray gun, and strikes a silly pose.
+	[lb]S[rb] The underlayer to the suit has self repairing fabric.
+	[lb]S[rb] We get an injection of nanomites that build a little pocket to live in within the soft tissues of our core that instantly deploy to heal any wounds.
+	[lb]S[rb] The platemail is also heat shielding, UV shielding, radiation shielding, bullet resistant, and easy to clean.
+	[lb]L[rb] It's extremely uncomfortable when you're fat.
+	- Can I shoot your gun?
+		[lb]S[rb] No.
+		- Please?
+		[lb]L[rb] This thing heats up bullets into slag and fires red hot molten metal at very very fast gun speeds.
+		[lb]S[rb] So, No.
+		=> root_reponses
+- Goodbye!
+	[lb]S[rb] Good-bye.  And, thank you again.
+	[lb]L[rb] Bye bye now! 
+	=> END!

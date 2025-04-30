@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://18jnkrgld21"
+path="res://.godot/imported/Shrimp.dialogue-a68ad04106bdc6073a069a95876de69e.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/Shrimp.dialogue"
+dest_files=["res://.godot/imported/Shrimp.dialogue-a68ad04106bdc6073a069a95876de69e.tres"]
+
+[params]
+
+defaults=true

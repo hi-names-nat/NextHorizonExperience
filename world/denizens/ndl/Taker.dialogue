@@ -1,0 +1,92 @@
+~ ROOT
+Oh hey what's up.
+before we talk, can i have your pronouns?
+- * Give them your pronouns
+	(you say your pronouns)
+	(you feel your pronouns pilfered.)
+	ha. thanks. more for my collection.
+	whats up. they call me the taker round here.
+	i use all pronouns. 
+	not any.
+	all.
+	all of them. all pronouns, even ones that don't yet exist.
+	and you have to change which one every time. keep it interesting.
+	anyway. sup?
+	- Tell me about yourself
+		~ about_self
+		im the taker.
+		i take the pronouns.
+		i live here.
+		welcome to the place. by the way.
+		and thanks for the pronouns.
+		...
+		...
+		uh. came here a long time ago.
+		just been hanging out. figured out a lot about myself here.
+		like, a lot a lot. i'm pretty attuned to frostbreak's mana.
+		which is, why i can do stuff like that.
+		yeah. i dunno. don't ask about before, alright. i dont wanna think about that.
+		- Mana?
+			mana is like, magic, or something.
+			lets you do stuff. magic stuff.
+			stuff that otherwise isn't possible.
+			its cool. lets you do a buncha stuff.
+			you seem to be pretty unattuned to the whole thing. you can learn, if you want.
+			it takes time, though.
+			its neat. id do it. i did it.
+			- Anything else?
+				uhhh. hm.
+				i dunno. have you chatted with Niyra yet?
+				she's like, a milf right?
+				like, you think too right?
+				im not insane?
+				alright. cool.
+				glad we're on the same page.
+				=> END!
+		- Anything else?
+	- Can I have my pronouns back?
+		no.
+		% (xe looks at your face)
+		% (he looks at your face)
+		% (fae looks at your face)
+		% (kit looks at your face)
+		% (they look at your face)
+		(you look miserable)
+		okay. look.
+		jus cuz i have your pronouns doesnt mean you cant keep usin em, right?
+		like.
+		man. yall are so confusing sometimes.
+		...
+		okay. here. you can have this.
+		its really valuable. its an " N F T ".
+		you want it?
+		- Take the " N F T "
+			% (she hands you a cookie)
+			% (it hands you a cookie)
+			% (they hand you a cookie)
+			% (zeyn hands you a cookie)
+			(it's... furry.)
+			what?
+			oh. hah.
+			"N F T" stands for 'neat furry treat'. i make them sometimes.
+			you're welcome.
+			- Tell me about yourself
+				=> about_self
+		- Refuse the " N F T "
+			alright. whatever!
+			your loss!
+			=> END
+	- [lb]QUEST[rb] Hey, you want this pronoun? [if Globals.states_dict["ufq"] == 1]
+		...
+		hey, this is will's, isn't it.
+		they've finally committed to they/them? good for them. good for them.
+		alright. yeah. i totally want it.
+		Okay here, let's trade. i'll take that he/him and you can have this
+		do Globals.set_state("ufq", 2)
+		({{Globals.PLAYER_NAME}} got the pronoun (they/them)!)
+		I bet you can imagine who this might be for.
+		...No?
+		Uh. Okay. Here's a hint. They're quite the "foxxy momma".
+		...
+		What?
+		=> END!

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://uq7nbhn0bnjy"
+path="res://.godot/imported/didi.dialogue-7c85175bb13d41cdd1a463dd422ce633.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/didi.dialogue"
+dest_files=["res://.godot/imported/didi.dialogue-7c85175bb13d41cdd1a463dd422ce633.tres"]
+
+[params]
+
+defaults=true

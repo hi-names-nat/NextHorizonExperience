@@ -8,11 +8,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="6_33gc2"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="6_mdy40"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8vsq1"]
-font = ExtResource("4_fghpb")
-font_size = 36
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wgt6g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j76d5"]
 font_size = 36
@@ -84,13 +80,20 @@ vertical = true
 script = ExtResource("6_mdy40")
 response_template = NodePath("ResponseExample")
 
-[node name="ResponseExample" type="Label" parent="Balloon/ResponsesMenu"]
+[node name="ResponseExample" type="RichTextLabel" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
 mouse_filter = 1
-text = "1. Say Thing"
-label_settings = SubResource("LabelSettings_8vsq1")
+theme_override_fonts/normal_font = ExtResource("4_fghpb")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wgt6g")
+bbcode_enabled = true
+text = "[lb]Heck[rb]"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
-[node name="DialogueOptions" type="Label" parent="."]
+[node name="DialogueOptions" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 visible = false
 offset_left = 4.0
@@ -99,13 +102,12 @@ offset_right = 2200.0
 offset_bottom = 888.0
 mouse_filter = 1
 theme = ExtResource("3_1y825")
-theme_override_fonts/font = ExtResource("4_fghpb")
+bbcode_enabled = true
 text = "1: Say Thing
 2: Say Thing
 3: say thing
 4: say thing
 5: say thing"
-label_settings = SubResource("LabelSettings_j76d5")
 
 [node name="ExplainPrompt" type="Label" parent="."]
 unique_name_in_owner = true
@@ -122,4 +124,9 @@ text = "(Select by using number keys)"
 label_settings = SubResource("LabelSettings_j76d5")
 vertical_alignment = 3
 
+[node name="TimeoutBalloon" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 10.0
+
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="timeout" from="TimeoutBalloon" to="." method="_on_timeout_balloon_timeout"]

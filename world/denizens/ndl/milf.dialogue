@@ -1,0 +1,228 @@
+~ ROOT
+Well, Hiya there! It's been a long while since we've seen any new faces around.
+Welcome to Frostbreak! I'm Niyra, this is Humphrey and--
+PANYA, GET THAT OUT OF YOUR MOUTH. PLEASE.
+That's Panya. They uh, take interest in what they find on the floor. Interest of the Mouthkind, specifically...
+~ responses_root
+- More about Niyra
+	=> about_nirya 
+- More about Frostbreak
+	=> about_frostbreak
+- More about Floor Tastes
+	=> about_floortastes
+- [lb]QUEST[rb] Do you want these they/them pronouns? [if Globals.states_dict["ufq"] == 2]
+	Oh! Gosh, thank you! Are these my they/them pronouns from taker?
+	I asked xem a while ago about adding a they/them to my list of pronouns. Fae said that it'd take a bit. I didn't understand at the time, but
+	These are nice. Thank you!
+	[lb]P[rb] Mom! You're a they/them now too!
+	[lb]H[rb] Took long enough.
+	How can I repay you for delivering this to me?
+	Oh! I know. I picked this up a while ago. I'm pretty sure it's from your reality.
+	I was gonna give it to someone, but instead you can give it to them.
+	Sorry. It's wrapped.
+	({{Globals.PLAYER_NAME}} opened the present.)
+	(There is a EarthbndCopy inside!)
+	do Globals.set_state("ufq", 3)
+	(You worry about the metanarrative collapsing in on itself.)
+	=> responses_root
+~ about_nirya
+Me? Golly, well. What's there to tell?
+I'm a mother of two, I run the bakery here when I'm not keeping an eye on these two...
+I'm real passionate about this place. It sorta saved me, back in the day.
+Frostbreak is real nice. I'm glad you and the others are here. It's real nice seein' new types of creatures after so long.
+~ responses_about_nirya
+- Saved You?
+	=> saved_you
+- The Bakery?
+	=> bakery
+- [lb]Return[rb]
+	=> responses_root
+~ saved_you
+Hm.. Usually I worry about tellin' this story, but I'm tryin' to be a bit more open in hopes that it'll help others. 
+So here goes.
+I was having trouble finding a place to rest our heads, back in our old home.
+My partner at the time had, well. They were not excellent to me nor to the twins.
+I was fed up, after a while. I took them and ran.
+[lb]H[rb] I hated them!
+[lb]P[rb] Yeah!
+You two weren't even old enough to remember them!
+Anyway,
+Didn't have much.
+Ended up staying with a friend of mine's for a while.
+Eventually we were outstaying our welcome, and that's when I saw it for the first time. 
+[lb]H[rb] She always gets emotional at this part...
+[lb]P[rb] Like you didnt' cry when she told you the first time!
+The light you saw when entering. The beckoning of the chain.
+At first, I thought it was the end for me, but I stepped through to see this place. A haven, well and true.
+I decided perhaps we would stay.
+Maybe for a while, we would see.
+[lb]P[rb] Then she brought us! It was crazy, from nowhere to just, here. And suddenly we're this!!!
+Eventually we decided we wanted to stay. 
+I spoke to those who guard Trailhead, spoke with The Dragon, and took up permanent residence here. 
+We do go back sometimes. But it always feels. Wrong. Somehow. I don't think that world was ever really ours.
+~ responses_saved_you
+- The Dragon?
+	=> the_dragon
+- Trailhead?
+	=> trailhead
+- The Haven?
+	=> the_haven
+- Your old home?
+	=> old_home
+- [lb]Return[rb]
+	=> responses_about_nirya
+~ the_dragon
+The Dragon is one of the two guardians of frostbreak, along with The Fox. 
+They've been around as long as anyone can remember. Some say they're manifestations of mana itself.
+The Dragon watches from the peaks to the north, ensuring nothing happens to us. 
+It's tradition for those who come here often to pick one of the two to be "their" guardian. It's really only symbolic, used by The Inner Circle to break us into teams for fun.
+I of course picked The Dragon. However Panya is a big Fox supporter.
+[lb]P[rb] Yeah! Go Fox! Dragon will rue the day they crossed Paya Highnose!
+We haven't crossed each other at all...
+I swear...
+=> responses_saved_you
+~ trailhead
+Trailhead is real kind!
+They're part of The Inner Circle responsible for readying those who make the climb up to meet The Dragon.
+They ready you with a warm meal, supplies, and a trinket to return back, if you really need.
+They're the reason we're here. I could not have made the climb without them.
+I think your dragon friend, Hex was it? referred to them once to me as "A Special Interest Group for Management".
+I have no idea what that means. Maybe you do.
+if Globals.states_dict["milf_feather"] == 0
+	Hey, you know what... I was told to give folks these. So here...
+	set Globals.player_feathers += 1
+	do Globals.set_state("milf_feather", 1)
+	([wave]You got 1 feather![/wave] In-game only, sorry!)
+	(You have {{Globals.player_feathers}} feathers in total.)
+	That's a dragon's feather. It's used as kind of our token of thanks. 
+	They're filled with a certain sort of power, it allows you to do things that otherwise you'd have trouble doing.
+	I think Hex Knows more. Ask her.
+=> responses_saved_you
+~ the_haven
+This is indeed "The Haven".
+Frostbreak isn't just this beautiful mess of wood and stone high up this mountaintop.
+It actually spans up to the peaks to the north and down into the snowdrifts to the south.
+The Haven is simply this area. The place we inhabit.
+Hm, it looks like the current chain you're using won't let you get to the places outside of the haven.
+That's odd. Not very common but of course, yours is the first chain in a while. Maybe it just needs more time.
+( Suddenly, you hear Hex's voice ... )
+"Thank you for your patience!"
+What? I didn't hear anything...
+[wave] But it sounds like it was for you. [/wave]
+=> responses_saved_you
+~ old_home
+We used to live in a small city in our universe.
+It was a lot different. There was only really folks who looked one way.
+One species, I think you could say.
+It was quite pretty. Green. Hilly. Little hills. Not like the big mountains here.
+A smoke would hang in the air in the morningtime. Sometimes I miss it, but I can always visit.
+=> responses_saved_you
+~ bakery 
+Ah! I run the bakery here!
+And live on the second floor with these two.
+As for where the actual baking equipment is...
+It's all in the basement, behind the counter.
+Unfortunately I can't let those without training down there. I'm sorry, hun.
+But, you want anything?
+I've got, cinnamon rolls, olive oil cakes, cookies of course... Breads and things like that too, of course.
+- A cinnamon roll, please!
+	=> cnmn_roll
+- Ooh, olive oil cake!
+	=> olive_oil_cake
+- Just a cookie please!
+	=> cookie
+~ cnmn_roll
+(A cinnamon roll. Perhaps with walnuts, if that's your style).
+(It's shocking how good it is.)
+(HP Fully Restored)
+...Wait, why do you have HP?
+...No matter.
+=> about_nirya
+~ olive_oil_cake
+(A classic olive oil cake)
+(A simple flavor of light vanilla and lemon)
+(Complimented by a spongy texture and slight olive oil flavor)
+(You should probably save some for la-)
+(Iiiit's gone. Oops.)
+(HP + 35)
+...Wait, why do you have HP?
+...No matter.
+=> about_nirya
+
+~ cookie
+That cookie is pine chip, specifically.
+Made with sweet pine sap you can find here.
+It's a bit of an acquired taste.
+(You take a bite...)
+(It's like maple syrup, but if it was instead pine nuts.)
+(It's already growing on you, as you finish the cookie)
+(HP + 20)
+...Wait, why do you have HP?
+...No matter.
+=> about_nirya
+~ about_frostbreak
+You'd be better asking one of The Inner Circle or a Guardian about the inner machinations of the place.
+But, well. Frostbreak is explictly a safe haven for all sorts.
+Those who don't fit into the worlds they found themselves a part of...
+Those who feel lost, or confused.
+Those who need a warm place to rest, a metaphoric haven away from the bitter cold of what they call reality.
+Frostbreak, I think at least, exists for that purpose.
+I don't know much about Mana or lifespark. That sort of magicy stuff flies over my head.
+I understand your group has at least two that have an innate understanding of the stuff.
+I'd recommend asking them about this, but...
+I feel as if Frostbreak's lifespark is in keeping us safe.
+look at this place, and it's not only that you all look at me. It's not just all of the critters I know look at me and smile back...
+And it's not just the guardians.
+But it's the place itself. Frostbreak seems to. Care.
+Innately. That must be the sort of worldspark that burns deep within this place's core.
+Sorry, I'm not makin' sense, am I?
+Well, you know how it is. Us old timers have to go off on our tangents every now and then.
+[lb]P[rb] MOM! You're only like 30!!!!
+Thirty-Four, dear.
+[lb]H[rb] Is it fun for you to act like you're older than you are?
+~ frostbreak_responses
+- What's Lifespark?
+	=> lifespark 
+- ... "Mana"?
+	=> mana
+- The... Inner circle?
+	=> inner_circle
+- [lb]Return[rb]
+	=> responses_root
+~ lifespark
+See, I'm not too sure about that stuff. I'm pretty sure Lifespark is somehing about will to live? 
+You might wanna talk to someone else, maybe they'd know more.
+[lb]H[rb] My friend told me that Lifespark is the feeling you feel with your friends...
+[lb]H[rb] Like when you feel that sort of connection with someone?
+Hmmm! you'll have to tell me about this friend later.
+=> frostbreak_responses
+~ mana
+Mana is magic. Specifically mana refers to the motes that surround us.
+Magic is like, kind of a physical thing. It underscores everything we experience. It is us, or so I'm told.
+I don't get it. I'm not too sensitive to it.
+I could learn, of course, and I'm trying, but it takes a while.
+[lb]P[rb] But one day Mom'll be a witch!
+Yes Panya.
+=> frostbreak_responses
+~ inner_circle
+The Inner Circle is a group that helps the guardians with management of the Haven.
+I've met them, as have you I'm sure, they're very nice.
+If you're ever interested, you can always speak to one of them to see if you could join.
+Even though their name is "The Inner Circle", they really try to be as inclusive as possible.
+I could have joined, if I wanted to.
+I just, don't do well with that sort of management stuff.
+=> frostbreak_responses
+~ about_floortastes
+[lb]P[rb] This floor tastes like Vanilla!
+[lb]H[rb] The floor over there tastes like strawberry!
+* Humphery points over towards the tavern.
+Please visitor, don't egg them on. I don't need any more germs in their mouth than they already have.
+You know, come to think of it. do germs actually exist here?
+* Taste the floor?
+- Yes
+	(The floor tastes like floor.)
+	(... You don't know what you expected.)
+	=> responses_root
+- No
+	(You decide not to risk it, just in case germs do exist.)
+	=> responses_root
