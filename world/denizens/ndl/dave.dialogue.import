@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cib4p6pqobd8u"
+path="res://.godot/imported/dave.dialogue-872c749384274c04139287fc98fc77fe.tres"
+
+[deps]
+
+source_file="res://world/denizens/ndl/dave.dialogue"
+dest_files=["res://.godot/imported/dave.dialogue-872c749384274c04139287fc98fc77fe.tres"]
+
+[params]
+
+defaults=true

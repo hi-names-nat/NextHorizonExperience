@@ -5,6 +5,7 @@
 
 [node name="NetworkPlayer" instance=ExtResource("1_ux4an")]
 script = ExtResource("2_isgci")
+transparency = 0.6
 speed = 0.5
 
 [node name="NetPlayer_Mesh" parent="." index="0"]

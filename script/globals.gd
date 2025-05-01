@@ -17,7 +17,7 @@ var states_dict: Dictionary = {
 	"didi_feather": 0
 	}
 
-var num_denizens = 12
+var num_denizens = 13
 
 var player_feathers: int = 0
 

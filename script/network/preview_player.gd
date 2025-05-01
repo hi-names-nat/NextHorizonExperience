@@ -1,8 +1,12 @@
 extends Node3D
 
-var transparency = 0.6
-
+@export var transparency = 0.6
 @export var speed = 0.5
+
+func _ready() -> void:
+	var c = Color.SNOW
+	c.a = transparency
+	$NetPlayer_Mesh.get_active_material(0).albedo_color = c
 
 func set_online_color(color: Color):
 	if color.a == 1: 

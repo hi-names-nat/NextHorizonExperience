@@ -1,31 +1,76 @@
-NHX 1.1 CREDITS
-(I'll add music here in a bit. Promise. - Hex)
-[wave]Hex (Natalie Soltis) 
-Program (System design and implementation)
-Level design (Layout, UV, Logic)
-Writing (Arynn, Niyra, William, Taker, Sam, Shrimp)
-Art (Level textures [edited, sourced from various places online])
-Original concepts, Direction & Production.
-[wave]Diamond Walton[/wave]
-Art (All NPCs, Statues.)
-Writing (Sara & Li, Didi, Art Dragon & Dave Spider)
-Inspriations
-[wave]Reykreyth Skye[/wave]
-Writing (Seri, other)
-Inspration
-[wave]Julie Muzina[/wave]
-Level Design (Lighting assistance)
-System design and implementation (Networking)
-Advice (networking)
-The rest of Trailhead and the Trailhead team.
-[wave]3rd Party Credits[/wave]
-Godot Game Engine - Juan Linietsky, Ariel Manzur and contributors.
-Func_Godot - Shifty, Hannah Crawford, Emberlynn Bland, Tim Macabbe.
-Dialogue Manager 3 - Nathan Hoad
-Halley Labs - borrowed artwork for easter eggs
-SPECIAL THANKS
-Huxley. Very good boy. RIP.
-Every member of Frostbreak. We do this kinda stuff for you.
-You, the player interested enough to find this sign. Good going.
-More coming soon. Promise. - Hex.
-=> END
+~ ROOT
+yeah yeah i know look ive been trying to find someone for the last fucking half hour
+but oh hold on let me put you on hold theres some lost kid who looks like theyre gonna come up to me and ask me if i know why their daddy abandoned them inside the mcdonalds ice cream machine
+~ root_responses
+- Um, hello?  You're speaking to a crab.
+	yeah its my phone 
+	well technically its not my phone my phone
+	im borrowing it from a
+	lets just say from a friend alright
+	its my friends crab and currently hes got my butt and its a whole ordeal and a half you shouldnt give a shit about 
+	~ crab_responses
+	- He’s got your butt.
+		yeah its a little foam plush butt phone
+		its not about form nor function
+		its about
+		the irony
+		- The irony?
+			yeah
+			its about having a device that serves a very specific function
+			making phone calls
+			and turning it into some abstract art piece thats also horrendously impractical to also use
+			also its a butt which adds another layer of irony 
+			sex humor
+			youre too young to understand
+			- * You say your real, actual age
+				you say that like that changes my fucking point kiddo
+				=> crab_responses
+	- Why is your phone a crab?
+		its cuz my boy er because my friend friend is a little crabby
+		also because its interesting
+		its literally the hollowed out shell of a dead crab 
+		managed to find one on the beach fully intact and decided to pocket it for later
+		later came and we were discussing our little phone watch ideas to each other and im like yo
+		what if we put it
+		in the crab
+		havent worked out a good name for it yet
+		carciniphonecation maybe 
+		but thats more of a mouthful than the crab
+		- Tell me about your boyfriend!
+			first and foremost who the fuck said i have a boyfriend
+			- You did.  Just now.
+				ok well second and secondmost dont trust a damn thing that comes out of my mouth
+				this thing is on autopilot 11 times out of 10 
+				hes not my boyfriend
+				hes my bro
+				hes my best friend
+				and hes a boy coincidentally
+				thats all there is to say about the matter
+				=> crab_responses
+	- [lb]RETURN[rb]
+		=> root_responses
+- Wait, I know who you are!
+	oh yeah 
+	go ahead 
+	take a shot
+	- You’re Dave Strider.
+		yknow what i feel kind of bad being rude to someone with a face as dumb as yours 
+		so im just gonna pretend you said dave striker and thats actually who i am 
+		but i am gonna set the record gay here by saying
+		whoever you think i am
+		i definitely am not
+		there are a lot of legal reasons why i am currently dave spider 
+		so uh yeah
+		im just gonna leave it at that youre welcome
+		=> root_responses
+- What’s with the suit?
+	im on a business trip 
+	was out in the middle of fuckass fuckall nowhere when some 
+	glow 
+	absorbed me
+	i dont know if thats how most people travel through chains but thats what happened to me
+	sort of reminded me of some tragic event that happened in my youth that made me who i am
+	true dave striker heads will know that i am referencing when i ascended 
+	anyway i got swallowed up and spit out here in fantasy fucking paradise bullshit 
+	did you see the milf 
+	kinda wish i could talk to her without her kids around yknow what im sayin

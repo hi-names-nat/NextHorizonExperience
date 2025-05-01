@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clc8l3jtfkvfp"]
+[gd_scene load_steps=24 format=3 uid="uid://clc8l3jtfkvfp"]
 
 [ext_resource type="PackedScene" uid="uid://c8s0wkmggt7g" path="res://script/network/network_player_preview.tscn" id="1_k7vjn"]
 [ext_resource type="Theme" uid="uid://dcashv8k2dmnx" path="res://UI/net_setup_theme.tres" id="1_q0ai7"]
@@ -9,9 +9,45 @@
 [ext_resource type="FontFile" uid="uid://dhkuel4fetba0" path="res://UI/ChevyRay - Magic Book.ttf" id="4_b0bn7"]
 [ext_resource type="FontFile" uid="uid://28qvp2ywthc" path="res://script/player/ChevyRay - Babyblocks.ttf" id="4_tytvx"]
 [ext_resource type="Script" path="res://script/network/versionDisplay.gd" id="5_d3v7n"]
+[ext_resource type="FontFile" uid="uid://0ccti3hbp8kw" path="res://UI/ChevyRay - Lantern.ttf" id="10_5n328"]
+[ext_resource type="Script" path="res://script/credits_crawl.gd" id="11_8i46a"]
+[ext_resource type="Script" path="res://script/network/switch_button.gd" id="12_bkd0c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_air3g"]
 texture = ExtResource("2_xw11k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufmfu"]
+bg_color = Color(0.210693, 0.212297, 0.216683, 0.305882)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.721569)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jbfw"]
+bg_color = Color(0.0876751, 0.0885552, 0.0909636, 0.305882)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.721569)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trf1g"]
+bg_color = Color(0.751855, 0.753978, 0.75978, 0.305882)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.721569)
+shadow_size = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7f1ie"]
 
@@ -42,7 +78,7 @@ shadow_color = Color(0, 0, 0, 0.721569)
 shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s2v5"]
-bg_color = Color(0.202161, 0.283707, 0.356547, 1)
+bg_color = Color(0.176809, 0.254567, 0.319438, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -51,6 +87,10 @@ expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 0.721569)
 shadow_size = 3
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v62vh"]
+blend_mode = 2
+light_mode = 1
 
 [node name="NetPlayerSetup" type="Control"]
 top_level = true
@@ -63,7 +103,7 @@ grow_vertical = 2
 theme = ExtResource("1_q0ai7")
 script = ExtResource("2_4japy")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,21 +112,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_air3g")
 
-[node name="VERSION" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 1277.0
-offset_bottom = 35.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_fonts/font = ExtResource("4_tytvx")
-theme_override_font_sizes/font_size = 32
-text = "[VERSION IDENTIFIER]"
-horizontal_alignment = 2
-script = ExtResource("5_d3v7n")
-
-[node name="ContentMargin" type="MarginContainer" parent="."]
+[node name="MainUI" type="Control" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,19 +120,70 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainContainer" type="VBoxContainer" parent="ContentMargin"]
+[node name="VERSION" type="Label" parent="Background/MainUI"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 286.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("4_tytvx")
+theme_override_font_sizes/font_size = 32
+text = "[VERSION IDENTIFIER]"
+horizontal_alignment = 1
+script = ExtResource("5_d3v7n")
+
+[node name="CreditsButton" type="MarginContainer" parent="Background/MainUI"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = -9.0
+offset_right = 1272.0
+offset_bottom = 63.0
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="NotStart" type="Button" parent="Background/MainUI/CreditsButton" node_paths=PackedStringArray("items_to_disable", "items_to_enable")]
+process_priority = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tytvx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_ufmfu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0jbfw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_trf1g")
+text = "Credits"
+script = ExtResource("12_bkd0c")
+items_to_disable = [NodePath("../..")]
+items_to_enable = [NodePath("../../../Credits")]
+
+[node name="ContentMargin" type="MarginContainer" parent="Background/MainUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MainContainer" type="VBoxContainer" parent="Background/MainUI/ContentMargin"]
 layout_mode = 2
 
-[node name="TitleMargin" type="MarginContainer" parent="ContentMargin/MainContainer"]
+[node name="TitleMargin" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="ContentMargin/MainContainer/TitleMargin"]
+[node name="Title" type="Label" parent="Background/MainUI/ContentMargin/MainContainer/TitleMargin"]
 layout_mode = 2
 text = "Decide your appearance, friend."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IPInput" type="LineEdit" parent="ContentMargin/MainContainer"]
+[node name="IPInput" type="LineEdit" parent="Background/MainUI/ContentMargin/MainContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_b0bn7")
@@ -117,12 +194,12 @@ context_menu_enabled = false
 caret_blink = true
 script = ExtResource("4_8hm4i")
 
-[node name="MenuPanel" type="Panel" parent="ContentMargin/MainContainer"]
+[node name="MenuPanel" type="Panel" parent="Background/MainUI/ContentMargin/MainContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_healf")
 
-[node name="MenuMargins" type="MarginContainer" parent="ContentMargin/MainContainer/MenuPanel"]
+[node name="MenuMargins" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,29 +211,29 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 10
 
-[node name="MenuDivider" type="HBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins"]
+[node name="MenuDivider" type="HBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins"]
 layout_mode = 2
 alignment = 1
 
-[node name="Inputs" type="VBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider"]
+[node name="Inputs" type="VBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="NameQuery" type="VBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs"]
+[node name="NameQuery" type="VBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs"]
 layout_mode = 2
 
-[node name="Query" type="Label" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery"]
+[node name="Query" type="Label" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery"]
 layout_mode = 2
 text = "Your name?"
 
-[node name="Input" type="HBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery"]
+[node name="Input" type="HBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery"]
 layout_mode = 2
 
-[node name="Spacer" type="MarginContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery/Input"]
+[node name="Spacer" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery/Input"]
 layout_mode = 2
 
-[node name="NameInput" type="LineEdit" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery/Input"]
+[node name="NameInput" type="LineEdit" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery/Input"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -165,20 +242,20 @@ max_length = 32
 context_menu_enabled = false
 caret_blink = true
 
-[node name="ColorQuery" type="VBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs"]
+[node name="ColorQuery" type="VBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs"]
 layout_mode = 2
 
-[node name="Query" type="Label" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery"]
+[node name="Query" type="Label" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery"]
 layout_mode = 2
 text = "Your color (Hex Code)?"
 
-[node name="Input" type="HBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery"]
+[node name="Input" type="HBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery"]
 layout_mode = 2
 
-[node name="Spacer" type="MarginContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery/Input"]
+[node name="Spacer" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery/Input"]
 layout_mode = 2
 
-[node name="HexInput" type="LineEdit" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery/Input"]
+[node name="HexInput" type="LineEdit" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery/Input"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -187,80 +264,82 @@ max_length = 32
 context_menu_enabled = false
 caret_blink = true
 
-[node name="PainQuery" type="VBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs"]
+[node name="PainQuery" type="VBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs"]
 layout_mode = 2
 
-[node name="Query" type="Label" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery"]
+[node name="Query" type="Label" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery"]
 layout_mode = 2
 text = "You accept the possibility of pain and seizure."
 
-[node name="Input" type="HBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery"]
+[node name="Input" type="HBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery"]
 layout_mode = 2
 
-[node name="Spacer" type="MarginContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery/Input"]
+[node name="Spacer" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery/Input"]
 layout_mode = 2
 
-[node name="PainInput" type="CheckBox" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery/Input"]
+[node name="PainInput" type="CheckBox" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery/Input"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PreviewContainer" type="VBoxContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider"]
+[node name="PreviewContainer" type="VBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider"]
 layout_mode = 2
 
-[node name="PreviewLabel" type="Label" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer"]
+[node name="PreviewLabel" type="Label" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer"]
 custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
 text = "This shall be your form."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="RenderMargins" type="MarginContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer"]
+[node name="RenderMargins" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer"]
 layout_mode = 2
 
-[node name="ModelRender" type="SubViewportContainer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins"]
+[node name="ModelRender" type="SubViewportContainer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins"]
 custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 stretch = true
+stretch_shrink = 8
 
-[node name="SubViewport" type="SubViewport" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender"]
+[node name="SubViewport" type="SubViewport" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(320, 320)
+size = Vector2i(40, 40)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0102972, 0.8)
 cull_mask = 1048064
 current = true
 fov = 31.8256
 
-[node name="NetworkPlayer" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport" instance=ExtResource("1_k7vjn")]
+[node name="NetworkPlayer" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport" instance=ExtResource("1_k7vjn")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.575496, -1.51859)
+transparency = 0.9
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
 transform = Transform3D(0.530703, 0.654081, -0.53901, 0, 0.635957, 0.771724, 0.847558, -0.409557, 0.337505, 0, 1.68234, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13967, 0, -1.12655)
 light_energy = 0.7
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport"]
 layers = 0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport/CSGCombiner3D"]
 size = Vector3(5, 5, 5)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport/CSGCombiner3D/CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/PreviewContainer/RenderMargins/ModelRender/SubViewport/CSGCombiner3D/CSGBox3D"]
 operation = 2
 size = Vector3(4, 4, 4)
 
-[node name="MarginContainer3" type="MarginContainer" parent="ContentMargin/MainContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Background/MainUI/ContentMargin/MainContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="Start" type="Button" parent="ContentMargin/MainContainer/MarginContainer3"]
+[node name="Start" type="Button" parent="Background/MainUI/ContentMargin/MainContainer/MarginContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 68
@@ -269,10 +348,202 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_va7qa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7s2v5")
 text = "ENTER"
 
-[connection signal="focus_entered" from="ContentMargin/MainContainer/IPInput" to="ContentMargin/MainContainer/IPInput" method="_on_focus_entered"]
-[connection signal="focus_exited" from="ContentMargin/MainContainer/IPInput" to="ContentMargin/MainContainer/IPInput" method="_on_focus_exited"]
-[connection signal="text_changed" from="ContentMargin/MainContainer/IPInput" to="." method="_on_ip_text_submitted"]
-[connection signal="text_changed" from="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery/Input/NameInput" to="." method="_on_name_text_submitted"]
-[connection signal="text_changed" from="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery/Input/HexInput" to="." method="_on_hex_text_submitted"]
-[connection signal="toggled" from="ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery/Input/PainInput" to="." method="_on_pain_toggled"]
-[connection signal="pressed" from="ContentMargin/MainContainer/MarginContainer3/Start" to="." method="_on_start_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MainUI/ContentMargin/MainContainer"]
+layout_mode = 2
+
+[node name="Credits" type="Control" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BGFagon" type="MarginContainer" parent="Background/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.0
+offset_top = -391.0
+offset_right = 406.0
+offset_bottom = 463.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModelRender" type="SubViewportContainer" parent="Background/Credits/BGFagon"]
+material = SubResource("CanvasItemMaterial_v62vh")
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+stretch = true
+stretch_shrink = 8
+
+[node name="SubViewport" type="SubViewport" parent="Background/Credits/BGFagon/ModelRender"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(96, 101)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="Background/Credits/BGFagon/ModelRender/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0102972, 0.8)
+cull_mask = 1048064
+current = true
+fov = 31.8256
+
+[node name="NetworkPlayer" parent="Background/Credits/BGFagon/ModelRender/SubViewport" instance=ExtResource("1_k7vjn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.575496, -1.51859)
+transparency = 0.2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background/Credits/BGFagon/ModelRender/SubViewport"]
+transform = Transform3D(0.530703, 0.654081, -0.53901, 0, 0.635957, 0.771724, 0.847558, -0.409557, 0.337505, 0, 1.68234, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Background/Credits/BGFagon/ModelRender/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13967, 0, -1.12655)
+light_energy = 0.7
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Background/Credits/BGFagon/ModelRender/SubViewport"]
+layers = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Background/Credits/BGFagon/ModelRender/SubViewport/CSGCombiner3D"]
+size = Vector3(5, 5, 5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Background/Credits/BGFagon/ModelRender/SubViewport/CSGCombiner3D/CSGBox3D"]
+operation = 2
+size = Vector3(4, 4, 4)
+
+[node name="Label" type="Label" parent="Background/Credits"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 10.0
+offset_right = 1244.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 120
+text = "Next Horizon Experience"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Background/Credits"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 140.0
+offset_right = -34.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q0ai7")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/Credits/Panel"]
+layout_mode = 2
+offset_right = 1219.0
+offset_bottom = 663.0
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Credits/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_5n328")
+theme_override_fonts/bold_font = ExtResource("10_5n328")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 44
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[center][b][wave]Diamond Walton[/wave][/b]
+Art (All NPCs, statues)
+Writing (Sara, Li, Didi, Morganite, Dave Spider)
+Gameplay consulting
+
+
+[b][wave] Hex [/wave][/b] 
+Software Planning
+System design & implementation
+Level Design (Layout, UV, Logic)
+Scenario & Denizen Writing (Arynn, Nirya, William, Taker, Sam, Shrimp)
+Art (Level textures. Edits)
+Original Concept, Direction, Production
+Gameplay consulting
+
+
+[wave][b]Julie Muzina[/b][/wave]
+Level Design (Lighting assistance)
+System design and implementation (Networking)
+Advice (networking)
+
+
+[wave][b]Reykreyth Skye[/b][/wave]
+Writing (Seri, other)
+Inspration
+Gameplay consulting
+
+
+[wave][b]3rd Party Credits[/b][/wave]
+[b]Godot Game Engine[/b] - Juan Linietsky, Ariel Manzur and contributors.
+[b]Func_Godot[/b] - Shifty, Hannah Crawford, Emberlynn Bland, Tim Macabbe.
+[b]Dialogue Manager 3[/b] - Nathan Hoad
+[b]Halley Labs[/b] - borrowed artwork for easter eggs
+
+
+[b][wave]SPECIAL THANKS[/wave][/b]
+Huxley. Very good boy. RIP.
+Diamond's previous baby kitten Luna, who spent as much time sitting on their tablet and chewing their pen as she did keeping them company and letting them work. And was the only one out of their pets who kept them company while they worked.
+Trailhead & the Trailhead team. You all are wonderful. Did a lot of work otherwise uncredited. Supported us through this crazy thing. Thanks so much.
+Every member of Frostbreak. We do this kinda stuff for you.
+You. The player willing to sit through this. Thank you! <3
+
+
+
+
+
+
+
+
+More soon. I promise.
+- Hex"
+fit_content = true
+scroll_active = false
+script = ExtResource("11_8i46a")
+speed = 40
+
+[node name="Button" type="Button" parent="Background/Credits" node_paths=PackedStringArray("items_to_disable", "items_to_enable")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 783.0
+offset_right = 1247.0
+offset_bottom = 879.0
+text = "Okay, Cool!"
+script = ExtResource("12_bkd0c")
+items_to_disable = [NodePath("..")]
+items_to_enable = [NodePath("../../MainUI")]
+
+[connection signal="pressed" from="Background/MainUI/CreditsButton/NotStart" to="Background/MainUI/CreditsButton/NotStart" method="_on_pressed"]
+[connection signal="focus_entered" from="Background/MainUI/ContentMargin/MainContainer/IPInput" to="Background/MainUI/ContentMargin/MainContainer/IPInput" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Background/MainUI/ContentMargin/MainContainer/IPInput" to="Background/MainUI/ContentMargin/MainContainer/IPInput" method="_on_focus_exited"]
+[connection signal="text_changed" from="Background/MainUI/ContentMargin/MainContainer/IPInput" to="." method="_on_ip_text_submitted"]
+[connection signal="text_changed" from="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/NameQuery/Input/NameInput" to="." method="_on_name_text_submitted"]
+[connection signal="text_changed" from="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/ColorQuery/Input/HexInput" to="." method="_on_hex_text_submitted"]
+[connection signal="toggled" from="Background/MainUI/ContentMargin/MainContainer/MenuPanel/MenuMargins/MenuDivider/Inputs/PainQuery/Input/PainInput" to="." method="_on_pain_toggled"]
+[connection signal="pressed" from="Background/MainUI/ContentMargin/MainContainer/MarginContainer3/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Background/Credits/Button" to="Background/Credits/Button" method="_on_pressed"]
