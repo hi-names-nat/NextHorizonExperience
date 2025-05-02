@@ -1,0 +1,8 @@
+name: Populate Godot export templates
+
+runs:
+  using: "composite"
+  steps:
+    - name: Move export templates
+      shell: bash
+      run: ${{ github.action_path }}/move-export-templates.sh

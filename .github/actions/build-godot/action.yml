@@ -1,0 +1,27 @@
+name: Install Godot
+inputs:
+  export_path:
+    description: Path where the built Godot project will be saved
+    required: true
+    default: build
+  release_identifier:
+    description: Release identifier for the build
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Godot
+      uses: ./.github/actions/install-godot
+
+    - name: Build Godot
+      shell: bash
+      run: |
+        mkdir -p ${{ inputs.export_path }}
+        ./godot --headless --path ${{ inputs.export_path }} --export-release ${{ inputs.release_identifier }}
+
+    - name: Archive Godot build
+      uses: actions/upload-artifact@v4
+      with:
+        path: ${{ inputs.export_path }}
+        name: godot-build

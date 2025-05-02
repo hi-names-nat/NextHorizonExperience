@@ -1,0 +1,188 @@
+name: Build Godot (Matrix)
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  install:
+    name: Install Godot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository for action
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/actions/
+
+      - name: Install and archive Godot & export templates
+        uses: ./.github/actions/install-godot
+        with:
+          # Archives an artifact "godot-install" that contains the `./godot` binary and `templates` for export templates.
+          archive: 'true'
+
+  build:
+    name: Build for ${{ matrix.release_identifier }}
+    needs: install
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        # The platforms to build for. These must exactly match with the names of export templates in the Godot project.
+        # NOTE: If you change these, make sure you also change them in the `add_artifacts_to_release` job, further down.
+        release_identifier:
+          - linux_client
+          - linux_server
+          - windows_client
+          - web_client
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Download Godot & export templates
+        uses: actions/download-artifact@v4
+        with:
+          name: godot-install
+
+        # Godot expects the export templates to be in a `/home/.local/...` directory, so we need to move them into place on the runner we are building on.
+      - name: Move export templates into place
+        uses: ./.github/actions/move-godot-export-templates
+
+        # TODO we need a way to build lightmaps here in order for the end result to be fully playable on all platforms.
+      - name: Build Godot Project
+        shell: bash
+        run: |
+          mkdir -p build/${{ matrix.release_identifier }}
+          chmod +x ./godot
+          ./godot --headless --export-release "${{ matrix.release_identifier }}"
+          rm -rf godot templates
+
+      - name: Rename Web Client HTML to index
+        if: ${{ matrix.release_identifier == 'web_client' }}
+        shell: bash
+        run: mv build/web_client/NextHorizon.html build/web_client/index.html
+
+      - name: Archive build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: build/${{ matrix.release_identifier }}
+          # This artifact needn't stick around, we just need it in the publish job, which will publish final versions of the artifacts to a GH release.
+          retention-days: 1
+          name: godot-build-${{ matrix.release_identifier }}
+
+#  deploy_web_client:
+#    name: Deploy web client
+#    needs: build
+#    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Download build artifact
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: godot-build-web_client
+#
+#      - name: Upload web artifact
+#        uses: appleboy/scp-action@v0.1.7
+#        with:
+#          host: ${{ secrets.WEB_DEPLOY_HOST }}
+#          username: ${{ secrets.WEB_DEPLOY_USERNAME }}
+#          password: ${{ secrets.WEB_DEPLOY_PASSWORD }}
+#          port: ${{ secrets.WEB_DEPLOY_PORT }}
+#          source: .
+#          target: ${{ secrets.WEB_DEPLOY_PATH }}
+#          tar_tmp_path: ${{ secrets.WEB_DEPLOY_TEMP_PATH }}
+#          rm: false
+#          timeout: 60s
+
+  tag_draft_release:
+    name: Tag and Draft Release
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag_name: ${{ steps.tagger.outputs.tag_name }}
+    steps:
+      - name: Checkout repository code (full history)
+        uses: actions/checkout@v4
+        with:
+          # Full history is needed for tagging.
+          fetch-depth: 0
+
+      - name: Determine Tag Name
+        id: tagger
+        shell: bash
+        run: |
+          TAG_NAME="release-$(date '+%Y-%m-%d-%H-%M-%S')"
+          echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Push tag
+        shell: bash
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email ${{ github.actor }}@users.noreply.github.com
+          git tag -a ${{ steps.tagger.outputs.tag_name }} -m "Release ${{ steps.tagger.outputs.tag_name }}"
+          git push --tags origin main
+
+      - name: Create Release
+        id: create_release
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create ${{ steps.tagger.outputs.tag_name }} \
+            --title "Release ${{ steps.tagger.outputs.tag_name }}" \
+            --draft \
+            --latest \
+            --generate-notes \
+            --target main \
+            --verify-tag
+
+  add_artifacts_to_release:
+    name: Add artifacts to release
+    needs: tag_draft_release
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        # The platforms to release for. These must exactly match with the names of export templates in the Godot project.
+        # NOTE: If you change these, make sure you also change them in the `build` job, further up.
+        release_identifier:
+          - linux_client
+          - linux_server
+          - windows_client
+          - web_client
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+        with:
+          # Full history is needed for tagging / releasing
+          fetch-depth: 0
+          # Checkout the tag we just pushed in the previous job.
+          # Prevents the possibility of `main` being updated while this job is running and causing a different ref to be published.
+          ref: ${{ needs.tag_draft_release.outputs.tag_name }}
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: godot-build-${{ matrix.release_identifier }}
+          path: build
+
+      - name: Compress artifact
+        shell: bash
+        id: compress_artifact
+        run: zip -r ${{ matrix.release_identifier }}.zip build
+
+      - name: Upload Release Asset
+        env:
+          # a PAT with the actions-read, contents-readwrite, workflows-readwrite scopes
+          GITHUB_TOKEN: ${{ secrets.NHX_RELEASE_TOKEN }}
+        run: gh release upload ${{ needs.tag_draft_release.outputs.tag_name }} ${{ matrix.release_identifier }}.zip --clobber
